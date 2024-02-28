@@ -1,0 +1,47 @@
+<div class="projectfu-playtest-class-feature">
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">
+                {{localize 'FU-PT.vehicle.config'}}
+            </label>
+        </legend>
+        <div class="flexrow flex-group-center">
+            <label class="resource-label-m">
+                {{localize 'FU-PT.vehicle.frame'}}
+                <div>
+                    <select name="system.data.frame" class="resource-inputs select-dropdown">
+                        {{selectOptions additionalData.frames selected=system.data.frame localize=true}}
+                    </select>
+                </div>
+            </label>
+            <label class="resource-label-m">
+                {{localize 'FU-PT.vehicle.moduleSlots'}}
+                <div>
+                    <input type="number" name="system.data.moduleSlots" value="{{system.data.moduleSlots}}">
+                </div>
+            </label>
+        </div>
+        <div class="flexrow flex-group-center">
+            <label class="resource-label-m">
+                {{localize 'FU-PT.vehicle.passengers'}}
+                <div>
+                    <input type="number" name="system.data.passengers" value="{{system.data.passengers}}">
+                </div>
+            </label>
+            <label class="resource-label-m">
+                {{localize 'FU-PT.vehicle.distanceMultiplier'}}
+                <div>
+                    <input type="number" name="system.data.distanceMultiplier" value="{{system.data.distanceMultiplier}}">
+                </div>
+            </label>
+        </div>
+    </fieldset>
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.description'}}</label>
+        </legend>
+        <div>
+            {{editor enrichedHtml.description target='system.data.description' engine='prosemirror' button=true}}
+        </div>
+    </fieldset>
+</div>

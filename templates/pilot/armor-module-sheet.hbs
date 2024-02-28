@@ -1,0 +1,56 @@
+<div class="projectfu-playtest-class-feature">
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.armorModule.defenses'}}</label>
+        </legend>
+        <div class="flexrow">
+            <div class="resource-content flexcol flex-group-center">
+                <label class="resource-label-m flexlarge">{{localize 'FU-PT.armorModule.defense'}}</label>
+                <div class="flexrow">
+                    <select name="system.data.defense.attribute" class="resource-inputs select-dropdown-m"
+                            {{#if system.data.martial}}disabled{{/if}}>
+                        {{selectOptions additionalData.attributes selected=system.data.defense.attribute
+                                        localize=true blank="-"}}
+                    </select>
+                    <span class="flex0">+</span>
+                    <input type="number" name="system.data.defense.modifier" value="{{system.data.defense.modifier}}">
+                </div>
+            </div>
+            <div class="flex0">
+                <label class="resource-label-m flexlarge">{{localize 'FU-PT.armorModule.martial'}}</label>
+                <div class="flex-group-center">
+                    <input type="checkbox" name="system.data.martial" {{checked system.data.martial}}>
+                </div>
+            </div>
+            <div class="resource-content flexcol flex-group-center">
+                <label class="resource-label-m flexlarge">{{localize 'FU-PT.armorModule.magicDefense'}}</label>
+                <div class="flexrow">
+                    <select name="system.data.magicDefense.attribute" class="resource-inputs select-dropdown-m"
+                            {{#if system.data.martial}}disabled{{/if}}>
+                        {{selectOptions additionalData.attributes selected=system.data.magicDefense.attribute
+                                        localize=true blank="-"}}
+                    </select>
+                    <span class="flex0">+</span>
+                    <input type="number" name="system.data.magicDefense.modifier"
+                           value="{{system.data.magicDefense.modifier}}">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.quality'}}</label>
+        </legend>
+        <div class="flexrow">
+            <input type="text" name="system.data.quality" value="{{system.data.quality}}">
+        </div>
+    </fieldset>
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.description'}}</label>
+        </legend>
+        <div>
+        {{editor enrichedHtml.description target='system.data.description' engine='prosemirror' button=true}}
+        </div>
+    </fieldset>
+</div>

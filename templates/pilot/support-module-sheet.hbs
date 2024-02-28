@@ -1,0 +1,23 @@
+<div class="projectfu-playtest-class-feature">
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.supportModule.config'}}</label>
+        </legend>
+        <div class="flexrow flex-group-center">
+            <label class="resource-label-m">
+                {{localize 'FU-PT.supportModule.complex'}}
+                <div>
+                    <input type="checkbox" name="system.data.complex" {{checked system.data.complex}}>
+                </div>
+            </label>
+        </div>
+    </fieldset>
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.description'}}</label>
+        </legend>
+        <div>
+        {{editor enrichedHtml.description target='system.data.description' engine='prosemirror' button=true}}
+        </div>
+    </fieldset>
+</div>

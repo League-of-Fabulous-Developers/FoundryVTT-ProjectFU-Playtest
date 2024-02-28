@@ -1,0 +1,73 @@
+{
+  "FU-PT": {
+    "description": "Description",
+    "quality": "Quality",
+    "classes": {
+      "esper": {
+        "name": "Activate Esper features",
+        "hint": "Activates the 'Psychic Gift' class feature type."
+      },
+      "mutant": {
+        "name": "Activate Mutant features",
+        "hint": "Activates the 'Therioform' class feature type and the 'Associated Therioforms' section of the NPC sheet."
+      },
+      "pilot": {
+        "name": "Activate Pilot features",
+        "hint": "Activates the 'Vehicle', 'Armor Module', 'Weapon Module' and 'Support Module' class feature types, as well as the vehicle section of the Character sheet."
+      }
+    },
+    "psychicGift": {
+      "label": "Psychic Gift",
+      "trigger": "Trigger"
+    },
+    "therioform": {
+      "label": "Therioform",
+      "associatedTherioforms": "Associated Therioforms"
+    },
+    "vehicle": {
+      "label": "Vehicle",
+      "frameExoskeleton": "Exoskeleton",
+      "frameMech": "Mech",
+      "frameSteed": "Steed",
+      "config": "Configuration",
+      "frame": "Frame",
+      "passengers": "Passengers",
+      "distanceMultiplier": "Travel Distance Multiplier",
+      "activeModules": "Active Modules",
+      "embark": "Embark",
+      "disembark": "Disembark",
+      "moduleSlots": "Module Slots"
+    },
+    "armorModule": {
+      "label": "Armor Module",
+      "defenses": "Defenses",
+      "defense": "Defense",
+      "magicDefense": "Magic Defense",
+      "martial": "Martial",
+      "quality": "Quality"
+    },
+    "weaponModule": {
+      "label": "Weapon Module",
+      "typeShield": "Shield",
+      "weaponConfig": "Weapon Module Type",
+      "weaponType": "Type",
+      "weaponCategory": "Category",
+      "complex": "Complex Module",
+      "accuracy": "Accuracy",
+      "accuracyAttributes": "Attributes",
+      "accuracyModifier": "Modifier",
+      "damage": "Damage",
+      "damageType": "Type",
+      "damageBonus": "Bonus",
+      "shieldDefenses": "Defenses",
+      "shieldDefense": "Defense Bonus",
+      "shieldMagicDefense": "Magic Defense Bonus",
+      "quality": "Quality"
+    },
+    "supportModule": {
+      "label": "Support Module",
+      "config": "Support Module Configuration",
+      "complex": "Complex"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "FU-PT": {
+    "description": "Beschreibung",
+    "quality": "Eigenschaft",
+    "psychicGift": {
+      "label": "Psychische Gabe",
+      "trigger": "Auslöser"
+    },
+    "therioform": {
+      "label": "Therioform",
+      "associatedTherioforms": "Passende Therioformen"
+    },
+    "vehicle": {
+      "label": "Fahrzeug",
+      "frameExoskeleton": "Exoskelett",
+      "frameMech": "Mech",
+      "frameSteed": "Ross",
+      "config": "Konfiguration",
+      "frame": "Bauart",
+      "passengers": "Passagiere",
+      "distanceMultiplier": "Reisedistanz Multiplikator",
+      "activeModules": "Aktive Module",
+      "embark": "Einsteigen",
+      "disembark": "Aussteigen",
+      "moduleSlots": "Modulkapazität"
+    },
+    "armorModule": {
+      "label": "Panzerungsmodul",
+      "defenses": "Abwehr",
+      "defense": "Verteidigung",
+      "magicDefense": "Magische Verteidiung",
+      "martial": "Kriegerisch",
+      "quality": "Eigenschaft"
+    },
+    "weaponModule": {
+      "label": "Waffenmodul",
+      "typeShield": "Schild",
+      "weaponConfig": "Modulart",
+      "weaponType": "Typ",
+      "weaponCategory": "Kategorie",
+      "complex": "Komplexes Modul",
+      "accuracy": "Angriffsprobe",
+      "accuracyAttributes": "Attribute",
+      "accuracyModifier": "Modifikator",
+      "damage": "Schaden",
+      "damageType": "Schadensart",
+      "damageBonus": "Bonus",
+      "shieldDefenses": "Abwehr",
+      "shieldDefense": "Bonus auf Verteidigung",
+      "shieldMagicDefense": "Bonus auf magische Verteidigung",
+      "quality": "Eigenschaft"
+    },
+    "supportModule": {
+      "label": "Unterstützungsmodul",
+      "config": "Modulkonfiguration",
+      "complex": "Komplexes Modul"
+    }
+  }
+}
