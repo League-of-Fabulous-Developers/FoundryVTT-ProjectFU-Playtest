@@ -9,6 +9,24 @@
 
 # ProjectFU Playtest Support
 
-This module aims to add support for classes and features
+This module aims to add support for classes and features that were present in playtest documents to the [ProjectFU](https://github.com/League-of-Fabulous-Developers/FoundryVTT-Fabula-Ultima) system for FoundryVTT.
+As a secondary goal, it is also intended as a showcase for how developers can integrate with the core ProjectFU system.
 
-## Changelog
+Our plan is to promote classes and features into the core system, once the books they appear in are available internationally.
+
+## Currently supported:
+
+### Esper
+* Psychic Gift class feature
+
+### Mutant
+* Therioform class feature
+* Associated Therioforms section for the NPC sheet
+
+### Pilot
+* Vehicle class feature
+* Armor, Weapon and Support Modules
+* Vehicle section for the Character sheet
+
+### Natural Fantasy classes
+* coming soon
