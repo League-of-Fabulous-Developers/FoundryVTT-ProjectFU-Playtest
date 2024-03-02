@@ -52,7 +52,7 @@ export class ArmorModuleDataModel extends projectfu.ClassFeatureDataModel {
     /**
      * Override defensive attributes based on the `martial` toggle.
      */
-    prepareBaseData() {
+    prepareData() {
         if (this.martial) {
             this.defense.attribute = ""
             this.magicDefense.attribute = ""

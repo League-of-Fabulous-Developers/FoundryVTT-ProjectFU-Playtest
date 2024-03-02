@@ -29,8 +29,7 @@
       "defenses": "Abwehr",
       "defense": "Verteidigung",
       "magicDefense": "Magische Verteidiung",
-      "martial": "Kriegerisch",
-      "quality": "Eigenschaft"
+      "martial": "Kriegerisch"
     },
     "weaponModule": {
       "label": "Waffenmodul",
@@ -47,13 +46,37 @@
       "damageBonus": "Bonus",
       "shieldDefenses": "Abwehr",
       "shieldDefense": "Bonus auf Verteidigung",
-      "shieldMagicDefense": "Bonus auf magische Verteidigung",
-      "quality": "Eigenschaft"
+      "shieldMagicDefense": "Bonus auf magische Verteidigung"
     },
     "supportModule": {
       "label": "Unterstützungsmodul",
       "config": "Modulkonfiguration",
       "complex": "Komplexes Modul"
+    },
+    "settings": {
+      "welcomeMessage": {
+        "name": "Willkommensnachricht noch einmal anzeigen",
+        "hint": "Aktivieren um die Willkommensnachricht beim neu laden von Foundry noch einmal anzuzeigen."
+      },
+      "classes": {
+        "esper": {
+          "name": "Esper Funtionalität aktivieren",
+          "hint": "Aktiviert das 'Psychische Gabe' Klassenmerkmal."
+        },
+        "mutant": {
+          "name": "Mutant Funktionalität aktivieren",
+          "hint": "Aktiviert das 'Therioform' Klassenmerkmal und den 'Therioformen' Bereich im NSC-Bogen."
+        },
+        "pilot": {
+          "name": "Pilot Funktionalität aktivieren",
+          "hint": "Aktiviert die 'Fahrzeug', 'Panzerungsmodul', 'Waffenmodul' und 'Unterstützungsmodul' Klassenmerkmale, sowie den Fahrzeug-Bereich des Charakterbogens."
+        }
+      }
+    },
+    "welcomeMessage": {
+      "thankYou": "Danke, dass du ProjectFU Playtest benutzt!",
+      "explanation": "Weil nicht jeder Spielleiter zwingend alle Klassen in seinem Spiel haben möchte haben wir Optionen eingebaut um die Klassen ein- oder auszuschalten. Standardmäßig sind alle Klassen erstmal ausgeschaltet und du musst sie erst in den Einstellungen einschalten.",
+      "warning": "Bitte sei beim wieder Ausschalten von Klassen vorsichtig. Gegenstände, die die Klassenmerkmale der Klasse, die du ausschalten möchtest, verwenden, werden nach der Änderung ungültig und verschwinden. Sowohl deine Browserkonsole als auch der 'Support & Issues' Dialog von Foundry werden dir Fehler anzeigen. Das ist erwartetes Verhalten. Wenn du diese Fehlermeldungen loswerden willst musst du sicherstellen, das keine Gegenstände die Klassenmerkmale verwenden, die du ausschalten willst."
     }
   }
 }

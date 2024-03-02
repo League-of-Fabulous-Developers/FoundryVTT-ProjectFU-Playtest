@@ -6,7 +6,7 @@ import {VehicleDataModel} from "./features/pilot/vehicle-data-model.mjs";
 import {LOG_MESSAGE, MODULE} from "./constants.mjs";
 import {VehicleManager} from "./features/pilot/vehicle-manager.mjs";
 import {SupportModuleDataModel} from "./features/pilot/support-module-data-model.mjs";
-import {registerClassSettings, SETTINGS} from "./settings.mjs";
+import {registerClassSettings, registerModuleSettings, SETTINGS} from "./settings.mjs";
 
 export const registeredFeatures = {}
 
@@ -14,6 +14,7 @@ Hooks.once('init', async function () {
     console.log(LOG_MESSAGE, "Initialization started")
 
     console.log(LOG_MESSAGE, "Registering settings")
+    registerModuleSettings()
     registerClassSettings()
 
     console.log(LOG_MESSAGE, "Registering class features")
@@ -65,3 +66,22 @@ Hooks.once('init', async function () {
 
     console.log(LOG_MESSAGE, "Initialized")
 });
+
+Hooks.once("ready", async function() {
+    if (game.settings.get(MODULE, SETTINGS.welcomeMessage) && game.user === game.users.activeGM) {
+        /** @type ChatMessageData */
+        const message = {
+            speaker: {alias: "ProjectFU Playtest"},
+            whisper: ChatMessage.getWhisperRecipients("GM"),
+            content: `
+<div>
+    <div style="margin-bottom: .5em">${game.i18n.localize("FU-PT.welcomeMessage.thankYou")}</div>
+    <div style="margin-bottom: .5em">${game.i18n.localize("FU-PT.welcomeMessage.explanation")}</div>
+    <div>${game.i18n.localize("FU-PT.welcomeMessage.warning")}</div>
+</div>`
+        };
+
+        ChatMessage.create(message);
+        game.settings.set(MODULE, SETTINGS.welcomeMessage, false);
+    }
+})

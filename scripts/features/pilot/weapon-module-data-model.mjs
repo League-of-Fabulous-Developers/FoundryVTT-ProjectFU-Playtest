@@ -148,7 +148,7 @@ export class WeaponModuleDataModel extends projectfu.RollableClassFeatureDataMod
     /**
      * Override `complex` for shields, since complex shields don't really make sense.
      */
-    prepareDerivedData() {
+    prepareData() {
         if (this.isShield) {
             this.complex = false
         }

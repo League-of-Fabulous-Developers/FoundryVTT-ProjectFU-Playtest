@@ -1,11 +1,24 @@
 import {MODULE} from "./constants.mjs";
 
 export const SETTINGS = {
+    welcomeMessage: "welcomeMessage",
     classes: {
         esper: "classes.esper",
         mutant: "classes.mutant",
         pilot: "classes.pilot",
     }
+}
+
+export function registerModuleSettings() {
+    game.settings.register(MODULE, SETTINGS.welcomeMessage, {
+        name: game.i18n.localize("FU-PT.settings.welcomeMessage.name"),
+        hint: game.i18n.localize("FU-PT.settings.welcomeMessage.hint"),
+        scope: "world",
+        config: true,
+        requiresReload: false,
+        type: Boolean,
+        default: true
+    })
 }
 
 export function registerClassSettings() {

@@ -2,20 +2,6 @@
   "FU-PT": {
     "description": "Description",
     "quality": "Quality",
-    "classes": {
-      "esper": {
-        "name": "Activate Esper features",
-        "hint": "Activates the 'Psychic Gift' class feature type."
-      },
-      "mutant": {
-        "name": "Activate Mutant features",
-        "hint": "Activates the 'Therioform' class feature type and the 'Associated Therioforms' section of the NPC sheet."
-      },
-      "pilot": {
-        "name": "Activate Pilot features",
-        "hint": "Activates the 'Vehicle', 'Armor Module', 'Weapon Module' and 'Support Module' class feature types, as well as the vehicle section of the Character sheet."
-      }
-    },
     "psychicGift": {
       "label": "Psychic Gift",
       "trigger": "Trigger"
@@ -43,8 +29,7 @@
       "defenses": "Defenses",
       "defense": "Defense",
       "magicDefense": "Magic Defense",
-      "martial": "Martial",
-      "quality": "Quality"
+      "martial": "Martial"
     },
     "weaponModule": {
       "label": "Weapon Module",
@@ -61,13 +46,37 @@
       "damageBonus": "Bonus",
       "shieldDefenses": "Defenses",
       "shieldDefense": "Defense Bonus",
-      "shieldMagicDefense": "Magic Defense Bonus",
-      "quality": "Quality"
+      "shieldMagicDefense": "Magic Defense Bonus"
     },
     "supportModule": {
       "label": "Support Module",
       "config": "Support Module Configuration",
       "complex": "Complex"
+    },
+    "settings": {
+      "welcomeMessage": {
+        "name": "Show welcome message again",
+        "hint": "Activate to show the welcome message again on next reload."
+      },
+      "classes": {
+        "esper": {
+          "name": "Activate Esper features",
+          "hint": "Activates the 'Psychic Gift' class feature type."
+        },
+        "mutant": {
+          "name": "Activate Mutant features",
+          "hint": "Activates the 'Therioform' class feature type and the 'Associated Therioforms' section of the NPC sheet."
+        },
+        "pilot": {
+          "name": "Aktiviert die 'Fahrzeug', ",
+          "hint": "Activates the 'Vehicle', 'Armor Module', 'Weapon Module' and 'Support Module' class feature types, as well as the vehicle section of the Character sheet."
+        }
+      }
+    },
+    "welcomeMessage": {
+      "thankYou": "Thank you for using ProjectFU Playtest!",
+      "explanation": "Since not every GM necessarily wants all classes to be available in their game, we added configuration options to enable/disable them. By default every class is disabled, which means if you want to use any of them you have to enable them in the settings first.",
+      "warning": "Please use caution when disabling a class again, because items that refer to those features will become invalid and vanish. Both your browser console and the Foundry 'Support & Issues' dialog will show you errors. This is expected behaviour. To get rid of the errors you need to make sure no items use the class features you want to disable."
     }
   }
 }
