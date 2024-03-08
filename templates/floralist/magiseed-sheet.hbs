@@ -1,0 +1,22 @@
+<div class='resource-content desc'>
+    <nav class='magiseed-tabs tabs flexrow' data-group='magiseedTabs'>
+        <a class='item tab-style' data-tab='effect1'>{{localize 'FU-PT.magiseed.effect1'}}</a>
+        <a class='item tab-style' data-tab='effect2'>{{localize 'FU-PT.magiseed.effect2'}}</a>
+        <a class='item tab-style' data-tab='effect3'>{{localize 'FU-PT.magiseed.effect3'}}</a>
+    </nav>
+    <hr/>
+    <div class='magiseed-content'>
+        <div class='tab' data-group='magiseedTabs' data-tab='effect1'>
+            <label class='resource-label-m'>{{localize 'FU-PT.magiseed.effect1'}}</label>
+            {{editor enrichedHtml.effect1 target='system.data.effect1' engine='prosemirror' button=true}}
+        </div>
+        <div class='tab' data-group='magiseedTabs' data-tab='effect2'>
+            <label class='resource-label-m'>{{localize 'FU-PT.magiseed.effect2'}}</label>
+            {{editor enrichedHtml.effect2 target='system.data.effect2' engine='prosemirror' button=true}}
+        </div>
+        <div class='tab' data-group='magiseedTabs' data-tab='effect3'>
+            <label class='resource-label-m'>{{localize 'FU-PT.magiseed.effect3'}}</label>
+            {{editor enrichedHtml.effect3 target='system.data.effect3' engine='prosemirror' button=true}}
+        </div>
+    </div>
+</div>

@@ -138,7 +138,7 @@ export class WeaponModuleDataModel extends projectfu.RollableClassFeatureDataMod
             check: checkData,
             details: checkWeapon,
             damage: checkDamage
-        }).then(value => game.projectfu.createCheckMessage(value))
+        }).then(value => game.projectfu.createCheckMessage(value, {[projectfu.SYSTEM]: {[projectfu.Flags.ChatMessage.Item]: item}}))
     }
 
     get isShield() {

@@ -81,6 +81,10 @@
         "pilot": {
           "name": "Activate Pilot features",
           "hint": "Activates the 'Vehicle', 'Armor Module', 'Weapon Module' and 'Support Module' class feature types, as well as the vehicle section of the Character sheet."
+        },
+        "floralist": {
+          "name": "Activate Floralist features",
+          "hint": "Activates the 'Magiseed' class feature type, the garden section of the Character sheet and Growth Clock integration for Misc. Abilities."
         }
       }
     },
@@ -88,6 +92,20 @@
       "thankYou": "Thank you for using ProjectFU Playtest!",
       "explanation": "Since not every GM necessarily wants all classes to be available in their game, we added configuration options to enable/disable them. By default every class is disabled, which means if you want to use any of them you have to enable them in the settings first.",
       "warning": "Please use caution when disabling a class again, because items that refer to those features will become invalid and vanish. Both your browser console and the Foundry 'Support & Issues' dialog will show you errors. This is expected behaviour. To get rid of the errors you need to make sure no items use the class features you want to disable."
+    },
+    "magiseed": {
+      "label": "Magiseed",
+      "effect1": "Effect 1",
+      "effect2": "Effect 2",
+      "effect3": "Effect 3",
+      "planted": "Magiseed planted.",
+      "removed": "Magiseed removed.",
+      "gardenLabel": "Garden",
+      "growthClock": {
+        "input": "Is Growth Clock?",
+        "notFound": "No Growth Clock found. Please mark a Misc Ability with a clock as both a favorite and as dedicated Growth Clock.",
+        "invalid": "Filled Growth Clock sections do not correspond to an effect."
+      }
     }
   }
 }

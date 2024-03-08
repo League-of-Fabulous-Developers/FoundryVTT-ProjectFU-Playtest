@@ -81,6 +81,10 @@
         "pilot": {
           "name": "Pilot Funktionalität aktivieren",
           "hint": "Aktiviert die 'Fahrzeug', 'Panzerungsmodul', 'Waffenmodul' und 'Unterstützungsmodul' Klassenmerkmale, sowie den Fahrzeug-Bereich des Charakterbogens."
+        },
+        "floralist": {
+          "name": "Floralist Funktionalität aktivieren",
+          "hint": "Aktiviert das 'Magisaat' Klassenmerkmal, die Garten-Bereich des Charakterbogens und die Wachstumsuhr-Integration für Sonstige Fähigkeiten."
         }
       }
     },
@@ -88,6 +92,20 @@
       "thankYou": "Danke, dass du ProjectFU Playtest benutzt!",
       "explanation": "Weil nicht jeder Spielleiter zwingend alle Klassen in seinem Spiel haben möchte haben wir Optionen eingebaut um die Klassen ein- oder auszuschalten. Standardmäßig sind alle Klassen erstmal ausgeschaltet und du musst sie erst in den Einstellungen einschalten.",
       "warning": "Bitte sei beim wieder Ausschalten von Klassen vorsichtig. Gegenstände, die die Klassenmerkmale der Klasse, die du ausschalten möchtest, verwenden, werden nach der Änderung ungültig und verschwinden. Sowohl deine Browserkonsole als auch der 'Support & Issues' Dialog von Foundry werden dir Fehler anzeigen. Das ist erwartetes Verhalten. Wenn du diese Fehlermeldungen loswerden willst musst du sicherstellen, das keine Gegenstände die Klassenmerkmale verwenden, die du ausschalten willst."
+    },
+    "magiseed": {
+      "label": "Magisaat",
+      "effect1": "Effekt 1",
+      "effect2": "Effekt 2",
+      "effect3": "Effekt 3",
+      "planted": "Magisaat gepflanzt.",
+      "removed": "Magisaat entfernt.",
+      "gardenLabel": "Garten",
+      "growthClock": {
+        "input": "Ist Wachstumsuhr?",
+        "notFound": "Keine Wachstumsuhr gefunden. Bitte markier eine Sonstige Fähigkeit mit Uhr sowohl als Favorit als auch als dedizierte Wachstumsuhr.",
+        "invalid": "Gefüllt Segmente der Wachstumsuhr entsprechen keinem Effekt."
+      }
     }
   }
 }

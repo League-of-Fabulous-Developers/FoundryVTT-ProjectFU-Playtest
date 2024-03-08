@@ -8,6 +8,8 @@ import {LOG_MESSAGE, MODULE} from "./constants.mjs";
 import {VehicleManager} from "./features/pilot/vehicle-manager.mjs";
 import {SupportModuleDataModel} from "./features/pilot/support-module-data-model.mjs";
 import {registerClassSettings, registerModuleSettings, SETTINGS} from "./settings.mjs";
+import {MagiseedDataModel} from "./features/floralist/magiseed-data-model.mjs";
+import {GardenManager} from "./features/floralist/garden-manager.mjs";
 
 export const registeredFeatures = {}
 
@@ -67,6 +69,18 @@ Hooks.once('init', async function () {
             "projectfu-playtest.weaponModule.preview": "modules/projectfu-playtest/templates/pilot/weapon-module-preview.hbs",
             "projectfu-playtest.supportModule.sheet": "modules/projectfu-playtest/templates/pilot/support-module-sheet.hbs",
             "projectfu-playtest.supportModule.preview": "modules/projectfu-playtest/templates/pilot/support-module-preview.hbs",
+        })
+    }
+
+    if (game.settings.get(MODULE, SETTINGS.classes.floralist)) {
+        registeredFeatures.magiseed = CONFIG.FU.classFeatureRegistry.register(MODULE, "magiseed", MagiseedDataModel)
+
+        Hooks.on("projectfu.actor.dataPrepared", GardenManager.onActorPrepared)
+        Hooks.on("renderFUStandardActorSheet", GardenManager.onRenderStandardFUActorSheet)
+        Hooks.on("renderFUItemSheet", GardenManager.onRenderFUItemSheet)
+
+        Object.assign(templates, {
+            "projectfu-playtest.magiseed.sheet": "modules/projectfu-playtest/templates/floralist/magiseed-sheet.hbs"
         })
     }
 

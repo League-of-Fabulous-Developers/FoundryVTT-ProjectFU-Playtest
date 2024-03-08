@@ -6,7 +6,7 @@
 }
 
 
-.vehicle-section,.associated-therioforms {
+.vehicle-section,.associated-therioforms, .garden-section {
     margin-bottom: 0.5em;
 }
 
@@ -26,4 +26,8 @@
 
 .vehicle-section .over-capacity {
     color: var(--color-level-error);
+}
+
+.chat-message .message-content .magiseed-effect {
+    padding: 0.5em;
 }

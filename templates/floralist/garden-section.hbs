@@ -1,0 +1,21 @@
+<fieldset class="title-fieldset desc resource-content garden-section">
+    <legend class="resource-label-m">{{localize 'FU-PT.magiseed.gardenLabel'}}</legend>
+    <div class="items-list">
+        <div class="item" data-item-id="{{planted.id}}">
+            <div class="flexrow">
+                <div class="item-name">
+                    <div class="item-image">
+                        <div class="rollable" data-roll-type="item">
+                            <img src="{{planted.img}}" data-tooltip="{{planted.name}}">
+                        </div>
+                    </div>
+                    <h4 class="click-item resource-content">
+                        <span class="resource-text-m" style="display: flex; align-items: center; gap: 3px">
+                            {{planted.name}}
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
