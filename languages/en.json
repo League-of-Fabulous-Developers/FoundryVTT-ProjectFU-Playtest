@@ -68,7 +68,7 @@
           "hint": "Activates the 'Therioform' class feature type and the 'Associated Therioforms' section of the NPC sheet."
         },
         "pilot": {
-          "name": "Aktiviert die 'Fahrzeug', ",
+          "name": "Activate Pilot features",
           "hint": "Activates the 'Vehicle', 'Armor Module', 'Weapon Module' and 'Support Module' class feature types, as well as the vehicle section of the Character sheet."
         }
       }
