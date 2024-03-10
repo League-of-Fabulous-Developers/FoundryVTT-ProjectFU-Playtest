@@ -15,7 +15,7 @@ export class TherioformDataModel extends projectfu.ClassFeatureDataModel {
         <label>${game.i18n.localize("FU-PT.therioform.associatedTherioforms")}</label>
     </legend>
     <div>
-        <input type="text" name="flags.projectfu-playtest.therioforms" value="${sheet.actor.getFlag(MODULE, "therioforms")}" class="resource-label-sm">
+        <input type="text" name="flags.projectfu-playtest.therioforms" value="${sheet.actor.getFlag(MODULE, "therioforms") ?? ""}" class="resource-label-sm">
     </div>
 </fieldset>`)
         }
