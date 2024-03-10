@@ -116,15 +116,15 @@ jobs:
             `# The name of the output file`      \
              ./module.zip                        \
             `# The files that will be included.` \
-            module.json                          \
-            README.md                            \
-            LICENSE                              \
-            templates                            \
+            languages/                           \
             scripts/                             \
             styles/                              \
+            templates/                           \
             packs/                               \
-            language/                            \
-            lang/
+            LICENSE                              \
+            module.json                          \
+            README.md
+            
           # Don't forget to add a backslash at the end of the line for any
           # additional files or directories!
 
