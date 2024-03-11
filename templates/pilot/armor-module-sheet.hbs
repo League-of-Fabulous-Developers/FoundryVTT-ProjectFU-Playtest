@@ -9,8 +9,11 @@
                 <div class="flexrow">
                     <select name="system.data.defense.attribute" class="resource-inputs select-dropdown-m"
                             {{#if system.data.martial}}disabled{{/if}}>
-                        {{selectOptions additionalData.attributes selected=system.data.defense.attribute
-                                        localize=true blank="-"}}
+                        {{#if system.data.martial}}
+                            <option>-</option>
+                        {{else}}
+                            {{selectOptions additionalData.attributes selected=system.data.defense.attribute localize=true}}
+                        {{/if}}
                     </select>
                     <span class="flex0">+</span>
                     <input type="number" name="system.data.defense.modifier" value="{{system.data.defense.modifier}}">
@@ -27,8 +30,11 @@
                 <div class="flexrow">
                     <select name="system.data.magicDefense.attribute" class="resource-inputs select-dropdown-m"
                             {{#if system.data.martial}}disabled{{/if}}>
-                        {{selectOptions additionalData.attributes selected=system.data.magicDefense.attribute
-                                        localize=true blank="-"}}
+                        {{#if system.data.martial}}
+                            <option>-</option>
+                        {{else}}
+                            {{selectOptions additionalData.attributes selected=system.data.magicDefense.attribute localize=true}}
+                        {{/if}}
                     </select>
                     <span class="flex0">+</span>
                     <input type="number" name="system.data.magicDefense.modifier"
