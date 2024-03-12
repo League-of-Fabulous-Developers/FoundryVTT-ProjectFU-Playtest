@@ -14,6 +14,11 @@ As a secondary goal, it is also intended as a showcase for how developers can in
 
 Our plan is to promote classes and features into the core system, once the books they appear in are available internationally.
 
+## Installation
+Use automatic Foundry module installation.\
+Module Manifest:\
+`https://github.com/League-of-Fabulous-Developers/ProjectFU-Playtest/releases/latest/download/module.json`
+
 ## Currently supported:
 
 ### Esper
