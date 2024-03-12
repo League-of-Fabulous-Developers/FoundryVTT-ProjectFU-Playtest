@@ -6,125 +6,128 @@
             </label>
         </legend>
         <div class="flexrow flex-group-center">
-            <label>
+            <label class="resource-label-m">
                 {{localize 'FU-PT.weaponModule.weaponType'}}
-                <select name="system.data.type" class="resource-inputs select-dropdown">
+                <select name="system.data.type" class="resource-inputs select-dropdown-m resource-text-m">
                     {{selectOptions additionalData.weaponTypes selected=system.data.type localize=true}}
                 </select>
             </label>
-            <label>
+            <label class="resource-label-m">
                 {{localize 'FU-PT.weaponModule.weaponCategory'}}
-                <select name="system.data.category" class="resource-inputs select-dropdown"
-                        {{#if system.data.isShield}}disabled{{/if}}>
+                <select name="system.data.category" class="resource-inputs select-dropdown-m resource-text-m" {{#if
+                    system.data.isShield}}disabled{{/if}}>
                     {{selectOptions additionalData.weaponCategories selected=system.data.category localize=true}}
                 </select>
             </label>
-            <label>
+            <label class="resource-label-m">
                 {{localize 'FU-PT.weaponModule.complex'}}
                 <input type="checkbox" name="system.data.complex" {{checked system.data.complex}} {{#if
-                        system.data.isShield}}disabled{{/if}}>
+                    system.data.isShield}}disabled{{/if}}>
             </label>
         </div>
     </fieldset>
     {{#if (not system.data.isShield)}}
-        <div class="grid grid-2col">
-            <fieldset class="title-fieldset desc resource-content">
-                <legend class="resource-label-full">
-                    <label class="resource-label-m">
-                        <i class="fas fa-dice icon"></i>
-                        {{localize 'FU-PT.weaponModule.accuracy'}}
-                    </label>
-                </legend>
-                <div class="grid grid-3col">
-                    <label class="grid-span-2 resource-label-m flex-group-center">
-                        {{localize 'FU-PT.weaponModule.accuracyAttributes'}}
-                        <div class="resource-content flexrow flex-group-center">
-                            <select name="system.data.accuracy.attr1"
-                                    class="resource-inputs select-dropdown">
-                                {{selectOptions additionalData.attributes selected=system.data.accuracy.attr1 sort=true
-                                                localize=true}}
-                            </select>
-                            <span class="flex0">+</span>
-                            <select name="system.data.accuracy.attr2" class="resource-inputs select-dropdown">
-                                {{selectOptions additionalData.attributes selected=system.data.accuracy.attr2 sort=true
-                                                localize=true}}
-                            </select>
-                        </div>
-                    </label>
-                    <label class="resource-label-m flex-group-center">
-                        {{localize 'FU-PT.weaponModule.accuracyModifier'}}
-                        <div class="resource-content flexcol flex-group-center">
-                            <div class="flexrow">
-                                <span>+</span>
-                                <input type="number" name="system.data.accuracy.modifier"
-                                       value="{{ system.data.accuracy.modifier }}" class="resource-inputs"/>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </fieldset>
-
-            <fieldset class="title-fieldset desc resource-content">
-                <legend class="resource-label-full">
-                    <label class="resource-label-m"><i class="fas fa-bullseye icon"></i>{{localize
-                            'FU-PT.weaponModule.damage'}}</label>
-                </legend>
-                <div class="grid grid-2col">
-                    <label class="resource-content flex-group-center resource-label-m">
-                        {{localize 'FU-PT.weaponModule.damageType'}}
-                        <div>
-                            <select name="system.data.damage.type" class="resource-inputs select-dropdown-m">
-                                {{selectOptions additionalData.damageTypes selected=system.data.damage.type
-                                                sort=true
-                                                localize=true}}
-                            </select>
-                        </div>
-                    </label>
-                    <label class="resource-content flex-group-center resource-label-m">
-                        {{localize 'FU-PT.weaponModule.damageBonus'}}
-                        <div>
-                            <span>+</span>
-                            <input type="number" name="system.data.damage.bonus"
-                                   value="{{ system.data.damage.bonus }}"
-                                   class="resource-inputs"/>
-                        </div>
-                    </label>
-                </div>
-            </fieldset>
-        </div>
-    {{else}}
+    <div class="grid grid-2col">
         <fieldset class="title-fieldset desc resource-content">
             <legend class="resource-label-full">
-                <label class="resource-label-m">{{localize 'FU-PT.weaponModule.shieldDefenses'}}</label>
+                <label class="resource-label-m">
+                    <i class="fas fa-dice icon"></i>
+                    {{localize 'FU-PT.weaponModule.accuracy'}}
+                </label>
             </legend>
-            <div class="flexrow">
-                <div class="resource-content flexcol flex-group-center">
-                    <label class="resource-label-m">
-                        {{localize 'FU-PT.weaponModule.shieldDefense'}}
+            <div class="grid grid-3col">
+                <label class="grid-span-2 resource-label-m flex-group-center">
+                    {{localize 'FU-PT.weaponModule.accuracyAttributes'}}
+                    <div class="resource-content flexrow flex-group-center gap-5">
+                        <select name="system.data.accuracy.attr1"
+                            class="resource-inputs select-dropdown-m resource-text-m">
+                            {{selectOptions additionalData.attributes selected=system.data.accuracy.attr1 sort=true
+                            localize=true}}
+                        </select>
+                        <span class="flex0"><i class="fa-solid fa-plus"></i></span>
+                        <select name="system.data.accuracy.attr2"
+                            class="resource-inputs select-dropdown-m resource-text-m">
+                            {{selectOptions additionalData.attributes selected=system.data.accuracy.attr2 sort=true
+                            localize=true}}
+                        </select>
+                    </div>
+                </label>
+                <label class="resource-label-m flex-group-center">
+                    {{localize 'FU-PT.weaponModule.accuracyModifier'}}
+                    <div class="resource-content flexcol flex-group-center gap-5">
                         <div>
-                            <input type="number" name="system.data.shield.defense"
-                                   value="{{system.data.shield.defense}}">
+                            <span class="flex0"><i class="fa-solid fa-plus"></i></span>
+                            <input type="number" name="system.data.accuracy.modifier"
+                                value="{{ system.data.accuracy.modifier }}" class="resource-inputs resource-text-m" />
                         </div>
-                    </label>
-                </div>
-                <div class="resource-content flexcol flex-group-center">
-                    <label class="resource-label-m">
-                        {{localize 'FU-PT.weaponModule.shieldMagicDefense'}}
-                        <div>
-                            <input type="number" name="system.data.shield.magicDefense"
-                                   value="{{system.data.shield.magicDefense}}">
-                        </div>
-                    </label>
-                </div>
+                    </div>
+                </label>
             </div>
         </fieldset>
+
+        <fieldset class="title-fieldset desc resource-content">
+            <legend class="resource-label-full">
+                <label class="resource-label-m"><i class="fas fa-bullseye icon"></i>{{localize
+                    'FU-PT.weaponModule.damage'}}</label>
+            </legend>
+            <div class="grid grid-2col">
+                <label class="resource-content flex-group-center resource-label-m">
+                    {{localize 'FU-PT.weaponModule.damageType'}}
+                    <div>
+                        <select name="system.data.damage.type"
+                            class="resource-inputs select-dropdown-m  resource-text-m">
+                            {{selectOptions additionalData.damageTypes selected=system.data.damage.type
+                            sort=true
+                            localize=true}}
+                        </select>
+                    </div>
+                </label>
+                <label class="resource-content flex-group-center resource-label-m">
+                    {{localize 'FU-PT.weaponModule.damageBonus'}}
+                    <div>
+                        <span class="flex0"><i class="fa-solid fa-plus"></i></span>
+                        <input type="number" name="system.data.damage.bonus" value="{{ system.data.damage.bonus }}"
+                            class="resource-inputs select-dropdown-sm resource-text-m" />
+                    </div>
+                </label>
+            </div>
+        </fieldset>
+    </div>
+    {{else}}
+    <fieldset class="title-fieldset desc resource-content">
+        <legend class="resource-label-full">
+            <label class="resource-label-m">{{localize 'FU-PT.weaponModule.shieldDefenses'}}</label>
+        </legend>
+        <div class="flexrow">
+            <div class="resource-content flexcol flex-group-center">
+                <label class="resource-label-m">
+                    {{localize 'FU-PT.weaponModule.shieldDefense'}}
+                    <div>
+                        <input type="number" name="system.data.shield.defense" value="{{system.data.shield.defense}}"
+                            class="resource-inputs select-dropdown-m resource-text-m">
+                    </div>
+                </label>
+            </div>
+            <div class="resource-content flexcol flex-group-center">
+                <label class="resource-label-m">
+                    {{localize 'FU-PT.weaponModule.shieldMagicDefense'}}
+                    <div>
+                        <input type="number" name="system.data.shield.magicDefense"
+                            value="{{system.data.shield.magicDefense}}"
+                            class="resource-inputs select-dropdown-m  resource-text-m">
+                    </div>
+                </label>
+            </div>
+        </div>
+    </fieldset>
     {{/if}}
     <fieldset class="title-fieldset desc resource-content">
         <legend class="resource-label-full">
             <label class="resource-label-m">{{localize 'FU-PT.quality'}}</label>
         </legend>
         <div class="flexrow">
-            <input type="text" name="system.data.quality" value="{{system.data.quality}}">
+            <input type="text" name="system.data.quality" value="{{system.data.quality}}"
+                class="resource-inputs select-dropdown-full">
         </div>
     </fieldset>
     <fieldset class="title-fieldset desc resource-content">

@@ -2,6 +2,13 @@
   "FU-PT": {
     "description": "Beschreibung",
     "quality": "Eigenschaft",
+    "arcanum2": {
+      "label": "Arkanum Rework",
+      "domain" :"Herrschaftsbereiche",
+      "merge": "Verschmelzungsvorteile",
+      "pulse": "Puls Effekt",
+      "dismiss": "Auflösungseffekt"
+    },
     "psychicGift": {
       "label": "Psychische Gabe",
       "trigger": "Auslöser"
@@ -59,6 +66,10 @@
         "hint": "Aktivieren um die Willkommensnachricht beim neu laden von Foundry noch einmal anzuzeigen."
       },
       "classes": {
+        "arcanist2": {
+          "name": "Arcanist Rewwork Funtionalität aktivieren",
+          "hint": "Aktiviert das 'Arkanum Rework' Klassenmerkmal."
+        },
         "esper": {
           "name": "Esper Funtionalität aktivieren",
           "hint": "Aktiviert das 'Psychische Gabe' Klassenmerkmal."

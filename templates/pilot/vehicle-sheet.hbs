@@ -5,11 +5,11 @@
                 {{localize 'FU-PT.vehicle.config'}}
             </label>
         </legend>
-        <div class="flexrow flex-group-center">
+        <div class="flexrow flex-group-center gap-5">
             <label class="resource-label-m">
                 {{localize 'FU-PT.vehicle.frame'}}
                 <div>
-                    <select name="system.data.frame" class="resource-inputs select-dropdown">
+                    <select name="system.data.frame" class="resource-inputs select-dropdown-full resource-text-m">
                         {{selectOptions additionalData.frames selected=system.data.frame localize=true}}
                     </select>
                 </div>
@@ -17,21 +17,25 @@
             <label class="resource-label-m">
                 {{localize 'FU-PT.vehicle.moduleSlots'}}
                 <div>
-                    <input type="number" name="system.data.moduleSlots" value="{{system.data.moduleSlots}}">
+                    <input type="number" name="system.data.moduleSlots" value="{{system.data.moduleSlots}}"
+                        class="resource-inputs select-dropdown-full resource-text-m">
                 </div>
             </label>
         </div>
-        <div class="flexrow flex-group-center">
+        <div class="flexrow flex-group-center gap-5">
             <label class="resource-label-m">
                 {{localize 'FU-PT.vehicle.passengers'}}
                 <div>
-                    <input type="number" name="system.data.passengers" value="{{system.data.passengers}}">
+                    <input type="number" name="system.data.passengers" value="{{system.data.passengers}}"
+                        class="resource-inputs select-dropdown-full resource-text-m">
                 </div>
             </label>
             <label class="resource-label-m">
                 {{localize 'FU-PT.vehicle.distanceMultiplier'}}
                 <div>
-                    <input type="number" name="system.data.distanceMultiplier" value="{{system.data.distanceMultiplier}}">
+                    <input type="number" name="system.data.distanceMultiplier"
+                        value="{{system.data.distanceMultiplier}}"
+                        class="resource-inputs select-dropdown-full resource-text-m">
                 </div>
             </label>
         </div>

@@ -6,17 +6,18 @@
         <div class="flexrow">
             <div class="resource-content flexcol flex-group-center">
                 <label class="resource-label-m flexlarge">{{localize 'FU-PT.armorModule.defense'}}</label>
-                <div class="flexrow">
-                    <select name="system.data.defense.attribute" class="resource-inputs select-dropdown-m"
-                            {{#if system.data.martial}}disabled{{/if}}>
+                <div class="flexrow gap-5">
+                    <select name="system.data.defense.attribute" class="resource-inputs select-dropdown-m" {{#if
+                        system.data.martial}}disabled{{/if}}>
                         {{#if system.data.martial}}
-                            <option>-</option>
+                        <option>-</option>
                         {{else}}
-                            {{selectOptions additionalData.attributes selected=system.data.defense.attribute localize=true}}
+                        {{selectOptions additionalData.attributes selected=system.data.defense.attribute localize=true}}
                         {{/if}}
                     </select>
-                    <span class="flex0">+</span>
-                    <input type="number" name="system.data.defense.modifier" value="{{system.data.defense.modifier}}">
+                    <span class="flex0"><i class="fa-solid fa-plus"></i></span>
+                    <input type="number" name="system.data.defense.modifier" value="{{system.data.defense.modifier}}"
+                        class="resource-inputs select-dropdown-l">
                 </div>
             </div>
             <div class="flex0">
@@ -27,18 +28,19 @@
             </div>
             <div class="resource-content flexcol flex-group-center">
                 <label class="resource-label-m flexlarge">{{localize 'FU-PT.armorModule.magicDefense'}}</label>
-                <div class="flexrow">
-                    <select name="system.data.magicDefense.attribute" class="resource-inputs select-dropdown-m"
-                            {{#if system.data.martial}}disabled{{/if}}>
+                <div class="flexrow gap-5">
+                    <select name="system.data.magicDefense.attribute" class="resource-inputs select-dropdown-m" {{#if
+                        system.data.martial}}disabled{{/if}}>
                         {{#if system.data.martial}}
-                            <option>-</option>
+                        <option>-</option>
                         {{else}}
-                            {{selectOptions additionalData.attributes selected=system.data.magicDefense.attribute localize=true}}
+                        {{selectOptions additionalData.attributes selected=system.data.magicDefense.attribute
+                        localize=true}}
                         {{/if}}
                     </select>
-                    <span class="flex0">+</span>
+                    <span class="flex0"><i class="fa-solid fa-plus"></i></span>
                     <input type="number" name="system.data.magicDefense.modifier"
-                           value="{{system.data.magicDefense.modifier}}">
+                        value="{{system.data.magicDefense.modifier}}" class="resource-inputs select-dropdown-l">
                 </div>
             </div>
         </div>
@@ -48,7 +50,8 @@
             <label class="resource-label-m">{{localize 'FU-PT.quality'}}</label>
         </legend>
         <div class="flexrow">
-            <input type="text" name="system.data.quality" value="{{system.data.quality}}">
+            <input type="text" name="system.data.quality" value="{{system.data.quality}}"
+                class="resource-inputs select-dropdown-full">
         </div>
     </fieldset>
     <fieldset class="title-fieldset desc resource-content">
@@ -56,7 +59,7 @@
             <label class="resource-label-m">{{localize 'FU-PT.description'}}</label>
         </legend>
         <div>
-        {{editor enrichedHtml.description target='system.data.description' engine='prosemirror' button=true}}
+            {{editor enrichedHtml.description target='system.data.description' engine='prosemirror' button=true}}
         </div>
     </fieldset>
 </div>

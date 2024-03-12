@@ -2,6 +2,13 @@
   "FU-PT": {
     "description": "Description",
     "quality": "Quality",
+    "arcanum2": {
+      "label": "Arcanum Rework",
+      "domain" :"Domain",
+      "merge": "Merge Benefits",
+      "pulse": "Pulse Effect",
+      "dismiss": "Dismiss Effect"
+    },
     "psychicGift": {
       "label": "Psychic Gift",
       "trigger": "Trigger"
@@ -59,6 +66,10 @@
         "hint": "Activate to show the welcome message again on next reload."
       },
       "classes": {
+        "arcanist2": {
+          "name": "Activate Arcanist Rework features",
+          "hint": "Activates the 'Arcanum Rework' class feature type."
+        },
         "esper": {
           "name": "Activate Esper features",
           "hint": "Activates the 'Psychic Gift' class feature type."

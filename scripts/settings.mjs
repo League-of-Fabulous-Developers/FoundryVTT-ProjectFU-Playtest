@@ -3,6 +3,7 @@ import {MODULE} from "./constants.mjs";
 export const SETTINGS = {
     welcomeMessage: "welcomeMessage",
     classes: {
+        arcanist2: "classes.arcanist2",
         esper: "classes.esper",
         mutant: "classes.mutant",
         pilot: "classes.pilot",
@@ -22,6 +23,16 @@ export function registerModuleSettings() {
 }
 
 export function registerClassSettings() {
+    game.settings.register(MODULE, SETTINGS.classes.arcanist2, {
+        name: game.i18n.localize("FU-PT.settings.classes.arcanist2.name"),
+        hint: game.i18n.localize("FU-PT.settings.classes.arcanist2.hint"),
+        scope: "world",
+        config: true,
+        requiresReload: true,
+        type: Boolean,
+        default: false
+    })
+
     game.settings.register(MODULE, SETTINGS.classes.esper, {
         name: game.i18n.localize("FU-PT.settings.classes.esper.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.esper.hint"),

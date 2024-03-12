@@ -1,3 +1,4 @@
+import {Arcanum2DataModel} from "./features/arcanist2/arcanum2-data-model.mjs";
 import {PsychicGiftDataModel} from "./features/esper/psychic-gift-data-model.mjs";
 import {TherioformDataModel} from "./features/mutant/therioform-data-model.mjs";
 import {ArmorModuleDataModel} from "./features/pilot/armor-module-data-model.mjs";
@@ -19,6 +20,15 @@ Hooks.once('init', async function () {
 
     console.log(LOG_MESSAGE, "Registering class features")
     const templates = {}
+
+    if (game.settings.get(MODULE, SETTINGS.classes.arcanist2)) {
+        registeredFeatures.arcanum2 = CONFIG.FU.classFeatureRegistry.register(MODULE, "arcanum2", Arcanum2DataModel)
+
+        Object.assign(templates, {
+            "projectfu-playtest.arcanum2.sheet": "modules/projectfu-playtest/templates/arcanist2/arcanum2-sheet.hbs",
+            "projectfu-playtest.arcanum2.preview": "modules/projectfu-playtest/templates/arcanist2/arcanum2-preview.hbs",
+        })
+    }
 
     if (game.settings.get(MODULE, SETTINGS.classes.esper)) {
         registeredFeatures.psychicGift = CONFIG.FU.classFeatureRegistry.register(MODULE, "psychicGift", PsychicGiftDataModel)
