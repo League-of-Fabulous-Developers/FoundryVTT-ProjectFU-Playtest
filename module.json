@@ -44,6 +44,11 @@
       "lang": "de",
       "name": "Deutsch",
       "path": "languages/de.json"
+    },
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "languages/fr.json"
     }
   ],
   "url": "#{URL}#",
