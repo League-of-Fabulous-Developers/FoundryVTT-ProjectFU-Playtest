@@ -1,0 +1,93 @@
+{
+  "FU-PT": {
+    "description": "Description",
+    "quality": "Qualité",
+    "arcanum2": {
+      "label": "Refonte de l'Arcaniste",
+      "domain" :"Domaine",
+      "merge": "Bénéfice de Fusion",
+      "pulse": "Effet d'impulsion",
+      "dismiss": "Effet du renvoi"
+    },
+    "psychicGift": {
+      "label": "Don psychique",
+      "trigger": "Activation"
+    },
+    "therioform": {
+      "label": "Thérioforme",
+      "associatedTherioforms": "Thérioformes associées"
+    },
+    "vehicle": {
+      "label": "Véhicule",
+      "frameExoskeleton": "Exosquelette",
+      "frameMech": "Mécha",
+      "frameSteed": "Destrier",
+      "config": "Configuration",
+      "frame": "Structure",
+      "passengers": "Passagers",
+      "distanceMultiplier": "Multiplicateur de distance de voyage",
+      "activeModules": "Modules actifs",
+      "embark": "Embarquer",
+      "disembark": "Débarquer",
+      "moduleSlots": "Slots de module"
+    },
+    "armorModule": {
+      "label": "Module d'armure",
+      "defenses": "Défenses",
+      "defense": "Défense",
+      "magicDefense": "Défense magique",
+      "martial": "Martial"
+    },
+    "weaponModule": {
+      "label": "Module d'arme",
+      "typeShield": "Bouclier",
+      "weaponConfig": "Type de module d'arme",
+      "weaponType": "Type",
+      "weaponCategory": "Catégorie",
+      "complex": "Module complèxe",
+      "accuracy": "Précision",
+      "accuracyAttributes": "Attributs",
+      "accuracyModifier": "Modificateur",
+      "damage": "Dégâts",
+      "damageType": "Type",
+      "damageBonus": "Bonus",
+      "shieldDefenses": "Défenses",
+      "shieldDefense": "Bonus de défense",
+      "shieldMagicDefense": "Bonus de défense magique"
+    },
+    "supportModule": {
+      "label": "Module de support",
+      "config": "Configuration du module de support",
+      "complex": "Complèxe"
+    },
+    "settings": {
+      "welcomeMessage": {
+        "name": "Montrer à nouveau le message de bienvenue",
+        "hint": "Activer pour montrer le message de bienvenue au prochain rechargement."
+      },
+      "classes": {
+        "arcanist2": {
+          "name": "Activer la refonte des compétences de l'Arcaniste",
+          "hint": "Activer la 'refonte de l'Arcanum' comme compétence de classe."
+        },
+        "esper": {
+          "name": "Activer les compétences de l'Esper",
+          "hint": "Activer les compétences 'Don Psychiques' de la classe."
+        },
+        "mutant": {
+          "name": "Activer les compétences de la Mutante",
+          "hint": "Activer la compétence 'Thérioforme' de la classe et ajouter 'Thérioforme associé' à la fiche de PNJ."
+        },
+        "pilot": {
+          "name": "Activer les compétences du Pilote",
+          "hint": "Activer le 'Véhicule, le 'Module d'armure', le 'Module d'arme, le 'Module de support' comme compétence de classe, et également la séction véhicule de la fiche de personnage."
+        }
+      }
+    },
+    "welcomeMessage": {
+      "thankYou": "Thank you for using ProjectFU Playtest!",
+      "explanation": "Since not every GM necessarily wants all classes to be available in their game, we added configuration options to enable/disable them. By default every class is disabled, which means if you want to use any of them you have to enable them in the settings first.",
+      "warning": "Please use caution when disabling a class again, because items that refer to those features will become invalid and vanish. Both your browser console and the Foundry 'Support & Issues' dialog will show you errors. This is expected behaviour. To get rid of the errors you need to make sure no items use the class features you want to disable."
+    }
+  }
+}
