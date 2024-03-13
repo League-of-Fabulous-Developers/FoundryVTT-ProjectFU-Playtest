@@ -58,7 +58,7 @@
     "supportModule": {
       "label": "Module de support",
       "config": "Configuration du module de support",
-      "complex": "Complèxe"
+      "complex": "Complexe"
     },
     "settings": {
       "welcomeMessage": {
@@ -85,9 +85,9 @@
       }
     },
     "welcomeMessage": {
-      "thankYou": "Thank you for using ProjectFU Playtest!",
-      "explanation": "Since not every GM necessarily wants all classes to be available in their game, we added configuration options to enable/disable them. By default every class is disabled, which means if you want to use any of them you have to enable them in the settings first.",
-      "warning": "Please use caution when disabling a class again, because items that refer to those features will become invalid and vanish. Both your browser console and the Foundry 'Support & Issues' dialog will show you errors. This is expected behaviour. To get rid of the errors you need to make sure no items use the class features you want to disable."
+      "thankYou": "Merci d'utiliser le Module ProjectFU-Playtest !",
+      "explanation": "Tous les MJ ne souhaitent pas forcément que toutes les classes soeint disponibles dans leur jeu. Nous avons donc ajouté des options de configuration pour les activer/ désactiver. Par défaut, elles sont toutes désactivées, par conséquent si vous souhaitez les utiliser, vous devez d'abord l'activer dans les paramètres.",
+      "warning": "Attention lorsque vous désactivez une classe. Les éléments qui ont un lien avec ces fonctionnalités deviendront inutilisable et disparaîtront. La console de votre navigateur et la boîte de dialogue 'Support & Issues' du logiciel afficheront les erreurs. Il s'agit d'un comportement attendu. Pour les éliminer, vous devez vous assurer au préalable qu'aucun élément n'utilise les fonctionnalités de la classe que vous souhaitez désactiver."
     }
   }
 }
