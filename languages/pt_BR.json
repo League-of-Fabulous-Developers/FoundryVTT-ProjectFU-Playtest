@@ -1,0 +1,93 @@
+{
+  "FU-PT": {
+    "description": "Descrição",
+    "quality": "Qualidade",
+    "arcanum2": {
+      "label": "Rework dos Arcanums",
+      "domain" :"Domínio",
+      "merge": "Benefícios da Fusão",
+      "pulse": "Efeitos de Pulso",
+      "dismiss": "Efeito de Dissipar"
+    },
+    "psychicGift": {
+      "label": "Dom Psíquico",
+      "trigger": "Gatilho"
+    },
+    "therioform": {
+      "label": "Terioforma",
+      "associatedTherioforms": "Terioformas Associadas"
+    },
+    "vehicle": {
+      "label": "Veículo",
+      "frameExoskeleton": "Exoesqueleto",
+      "frameMech": "Mecha",
+      "frameSteed": "Montaria",
+      "config": "Configuração",
+      "frame": "Chassi",
+      "passengers": "Passageiros",
+      "distanceMultiplier": "Multiplicador de Distância de Viagem",
+      "activeModules": "Módulos Ativos",
+      "embark": "Embarcar",
+      "disembark": "Desembarcar",
+      "moduleSlots": "Slots de Módulo"
+    },
+    "armorModule": {
+      "label": "Módulo de Armadura",
+      "defenses": "Defesas",
+      "defense": "Defesa",
+      "magicDefense": "Defesa Mágica",
+      "martial": "Marcial"
+    },
+    "weaponModule": {
+      "label": "Módulo de Arma",
+      "typeShield": "Escudo",
+      "weaponConfig": "Tipo de Módulo de Arma",
+      "weaponType": "Tipo",
+      "weaponCategory": "Categoria",
+      "complex": "Módulo Complexo",
+      "accuracy": "Precisão",
+      "accuracyAttributes": "Atributos",
+      "accuracyModifier": "Modificador",
+      "damage": "Dano",
+      "damageType": "Tipo",
+      "damageBonus": "Bônus",
+      "shieldDefenses": "Defesas",
+      "shieldDefense": "Bônus de Defesa",
+      "shieldMagicDefense": "Bônus de Defesa Mágica"
+    },
+    "supportModule": {
+      "label": "Módulo de Suporte",
+      "config": "Configuração de Módulo de Suporte",
+      "complex": "Complexo"
+    },
+    "settings": {
+      "welcomeMessage": {
+        "name": "Mostrar mensagem de boas-vindas novamente",
+        "hint": "Ative para mostrar a mensagem de boas-vindas novamente na próximar vez que recarregar."
+      },
+      "classes": {
+        "arcanist2": {
+          "name": "Ativar os recursos do Rework do Arcanista",
+          "hint": "Ativa os recursos de classe do 'Rework do Arcanista'."
+        },
+        "esper": {
+          "name": "Ativar os recursos do Esper",
+          "hint": "Ativa os recursos de classe do 'Esper'."
+        },
+        "mutant": {
+          "name": "Ativar os recursos do Mutante",
+          "hint": "Ativa o recurso de classe 'Terioforma' e a seção 'Terioformas Associadas' na ficha do PNJ."
+        },
+        "pilot": {
+          "name": "Ativar os recursos do Piloto",
+          "hint": "Ativa os recursos de classe 'Veículo', 'Módulo de Armadura', 'Módulo de Arma' e 'Módulo de Suporte', bem como a seção de veículo da ficha de personagem."
+        }
+      }
+    },
+    "welcomeMessage": {
+      "thankYou": "Obrigado por usar o ProjectFU Playtest!",
+      "explanation": "Como nem todo GM deseja necessariamente que todas as classes estejam disponíveis em seu jogo, adicionamos opções de configuração para ativá-las/desativá-las. Por padrão, todas as classes estão desabilitadas, o que significa que se você quiser usar alguma delas, você deve primeiro habilitá-las nas configurações.",
+      "warning": "Tenha cuidado ao desabilitar uma classe novamente, pois os itens que se referem a esses recursos se tornarão inválidos e desaparecerão. Tanto o console do seu navegador quanto a caixa de diálogo 'Suporte e problemas' do Foundry mostrarão erros. Este é um comportamento esperado. Para se livrar dos erros, você precisa ter certeza de que nenhum item usa os recursos de classe que você deseja desabilitar."
+    }
+  }
+}
