@@ -4,7 +4,7 @@
     "quality": "Quality",
     "arcanum2": {
       "label": "Arcanum Rework",
-      "domain" :"Domain",
+      "domain": "Domain",
       "merge": "Merge Benefits",
       "pulse": "Pulse Effect",
       "dismiss": "Dismiss Effect"
@@ -85,6 +85,10 @@
         "floralist": {
           "name": "Activate Floralist features",
           "hint": "Activates the 'Magiseed' class feature type, the garden section of the Character sheet and Growth Clock integration for Misc. Abilities."
+        },
+        "gourmet": {
+          "name": "Activate Gourmet features",
+          "hint": "Actives the 'Ingredient' and 'Cookbook' class feature types."
         }
       }
     },
@@ -105,6 +109,28 @@
         "input": "Is Growth Clock?",
         "notFound": "No Growth Clock found. Please mark a Misc Ability with a clock as both a favorite and as dedicated Growth Clock.",
         "invalid": "Filled Growth Clock sections do not correspond to an effect."
+      }
+    },
+    "ingredient": {
+      "label": "Ingredient",
+      "taste": {
+        "label": "Taste",
+        "bitter": "Bitter",
+        "salty": "Salty",
+        "sour": "Sour",
+        "sweet": "Sweet",
+        "umami": "Umami"
+      }
+    },
+    "cookbook": {
+      "label": "Cookbook",
+      "cooking": {
+        "title": "Cooking",
+        "ingredients": "Ingredients",
+        "effects": "Effects",
+        "unknownEffect": "Unknown Effect! Get cooking to discover which effect this combination provides!",
+        "startCooking": "Start Cooking!",
+        "unknownEffectChat": "Unknown Effect! Generate it using the Delicacy Effect table and don't forget to save it in your cookbook."
       }
     }
   }

@@ -4,7 +4,7 @@
     "quality": "Eigenschaft",
     "arcanum2": {
       "label": "Arkanum Rework",
-      "domain" :"Herrschaftsbereiche",
+      "domain": "Herrschaftsbereiche",
       "merge": "Verschmelzungsvorteile",
       "pulse": "Puls Effekt",
       "dismiss": "Auflösungseffekt"
@@ -85,6 +85,10 @@
         "floralist": {
           "name": "Floralist Funktionalität aktivieren",
           "hint": "Aktiviert das 'Magisaat' Klassenmerkmal, die Garten-Bereich des Charakterbogens und die Wachstumsuhr-Integration für Sonstige Fähigkeiten."
+        },
+        "gourmet": {
+          "name": "Gourmet Funktionalität aktivieren",
+          "hint": "Aktiviert die 'Zutat' und 'Kochbuch' Klassenmerkmale."
         }
       }
     },
@@ -105,6 +109,28 @@
         "input": "Ist Wachstumsuhr?",
         "notFound": "Keine Wachstumsuhr gefunden. Bitte markier eine Sonstige Fähigkeit mit Uhr sowohl als Favorit als auch als dedizierte Wachstumsuhr.",
         "invalid": "Gefüllt Segmente der Wachstumsuhr entsprechen keinem Effekt."
+      }
+    },
+    "ingredient": {
+      "label": "Zutat",
+      "taste": {
+        "label": "Geschmack",
+        "bitter": "Bitter",
+        "salty": "Salzig",
+        "sour": "Sauer",
+        "sweet": "Süß",
+        "umami": "Umami"
+      }
+    },
+    "cookbook": {
+      "label": "Kochbuch",
+      "cooking": {
+        "title": "Kochen",
+        "ingredients": "Zutaten",
+        "effects": "Effekte",
+        "unknownEffect": "Unbekannter Effekt! Koche diese Delikatesse um herauszufinden, welchen Effekt diese Kombination hat!",
+        "startCooking": "Kochen!",
+        "unknownEffectChat": "Unbekannter Effekt! Erzeuge den Effekt mittels der Delikatessen Effekt Tabelle und vergiss nicht ihn in deinem Kochbuch einzutragen."
       }
     }
   }

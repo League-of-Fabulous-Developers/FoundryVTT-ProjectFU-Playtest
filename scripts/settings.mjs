@@ -7,7 +7,8 @@ export const SETTINGS = {
         esper: "classes.esper",
         mutant: "classes.mutant",
         pilot: "classes.pilot",
-        floralist: "classes.floralist"
+        floralist: "classes.floralist",
+        gourmet: "classes.gourmet"
     }
 }
 
@@ -67,6 +68,16 @@ export function registerClassSettings() {
     game.settings.register(MODULE, SETTINGS.classes.floralist, {
         name: game.i18n.localize("FU-PT.settings.classes.floralist.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.floralist.hint"),
+        scope: "world",
+        config: true,
+        requiresReload: true,
+        type: Boolean,
+        default: false
+    })
+
+    game.settings.register(MODULE, SETTINGS.classes.gourmet, {
+        name: game.i18n.localize("FU-PT.classes.gourmet.name"),
+        hint: game.i18n.localize("FU-PT.classes.gourmet.hint"),
         scope: "world",
         config: true,
         requiresReload: true,

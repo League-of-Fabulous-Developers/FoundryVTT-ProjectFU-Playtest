@@ -1,10 +1,9 @@
 .projectfu-playtest-class-feature {
 }
 
-.projectfu-playtest-class-feature fieldset {
+.projectfu-playtest-class-feature fieldset, .cooking-app fieldset {
     margin-bottom: .5em;
 }
-
 
 .vehicle-section,.associated-therioforms, .garden-section {
     margin-bottom: 0.5em;
@@ -30,4 +29,101 @@
 
 .chat-message .message-content .magiseed-effect {
     padding: 0.5em;
+}
+
+.cookbook-sheet {
+}
+
+.cookbook-sheet .title-fieldset {
+
+}
+
+.cookbook-sheet .taste-container {
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.cookbook-sheet .taste > input[type=radio] {
+    display: none;
+}
+
+.cookbook-sheet .taste > input + * {
+    color: #ffffff;
+    font-size: 17px;
+    text-shadow: 1px 1px 1px #000000;
+    box-shadow: 3px 6px #2b4a42;
+    border-radius: 8px;
+    background-color: #2b4a42;
+    background-image: linear-gradient(to bottom, #2c584d, #a0cdbc);
+    word-wrap: break-word;
+    transition: -webkit-transform 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+    display: block;
+}
+
+.cookbook-sheet .taste > input:checked + * {
+    border: 1px solid darkslategrey;
+    border-radius: 8px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(1px);
+}
+
+.cookbook-sheet .combination {
+    display: none;
+}
+
+.cookbook-sheet .combination.active {
+    display: revert;
+}
+
+.cooking-app .window-content > * {
+    margin: 0.5em;
+}
+
+.cooking-app .gap-05 {
+    gap: 0.5em;
+}
+
+.cooking-app .action-button {
+    border: unset;
+    text-align: center;
+    display: inline-block;
+}
+
+.cooking-message .ingredients-list, .cooking-message .effect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em
+}
+
+.cooking-message .ingredients-list .flexrow {
+    flex-direction: row;
+}
+
+.cooking-message .ingredients-list img {
+    height: var(--font-size-20);
+    width: var(--font-size-20);
+    border-radius: 4px;
+    background-image: linear-gradient(to right, #2b4a42, #3d665a);
+    margin-right: 0.5em;
+}
+
+.cooking-message .effect-list fieldset {
+    border: 1px solid #2b4a42;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    box-shadow: color-mix(in srgb, #2b4a42, transparent 50%) 2px 2px;
+}
+
+.cooking-message fieldset legend {
+    width: 60%;
+    border-radius: 8px;
+    background: #2b4a42;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.125em 0.25em
+}
+
+.cooking-message fieldset.ingredients-list > legend, .cooking-message fieldset.effect-list > legend {
+    text-transform: uppercase;
 }

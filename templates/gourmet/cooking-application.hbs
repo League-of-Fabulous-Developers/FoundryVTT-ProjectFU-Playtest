@@ -1,0 +1,46 @@
+<form>
+    <div class="flexrow gap-05">
+        <section class="flex0">
+            <fieldset class="desc title-fieldset resource-content">
+                <legend class="resource-label-m">
+                    {{localize "FU-PT.cookbook.cooking.ingredients"}}
+                </legend>
+                {{#each recipe.ingredients}}
+                    <div>
+                        <label>
+                            <span class="resource-label-sm">{{localize "FU-PT.ingredient.label"}} {{math @index "+" 1}}</span><br>
+                            <select name="ingredients.{{@index}}">
+                                {{selectOptions (lookup @root.options @index) selected=this nameAttr="value"
+                                                labelAttr="label" blank="-"}}
+                            </select>
+                        </label>
+                    </div>
+                {{/each}}
+            </fieldset>
+        </section>
+        <fieldset class="desc title-fieldset resource-content">
+            <legend class="resource-label-m">
+                {{localize "FU-PT.cookbook.cooking.effects"}}
+            </legend>
+            {{#each effects}}
+                <fieldset class="desc title-fieldset resource-content">
+                    <legend class="resource-label-sm">
+                        <span>{{localize taste1.label}}</span>
+                        <span>+</span>
+                        <span>{{localize taste2.label}}</span>
+                    </legend>
+                    <div>
+                        {{#if effect}}
+                            {{{effect}}}
+                        {{else}}
+                            {{localize "FU-PT.cookbook.cooking.unknownEffect"}}
+                        {{/if}}
+                    </div>
+                </fieldset>
+            {{/each}}
+        </fieldset>
+    </div>
+    <div class="flexrow">
+        <button type="button" data-action="startCooking" class="action-button" {{#unless effects}}disabled{{/unless}}>{{localize "FU-PT.cookbook.cooking.startCooking"}}</button>
+    </div>
+</form>

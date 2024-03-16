@@ -4,7 +4,7 @@
     "quality": "Qualité",
     "arcanum2": {
       "label": "Refonte de l'Arcaniste",
-      "domain" :"Domaine",
+      "domain": "Domaine",
       "merge": "Bénéfice de Fusion",
       "pulse": "Effet d'impulsion",
       "dismiss": "Effet du renvoi"
@@ -81,6 +81,14 @@
         "pilot": {
           "name": "Activer les compétences du Pilote",
           "hint": "Activer le 'Véhicule, le 'Module d'armure', le 'Module d'arme, le 'Module de support' comme compétence de classe, et également la séction véhicule de la fiche de personnage."
+        },
+        "floralist": {
+          "name": "FU-PT.settings.classes.floralist.name",
+          "hint": "FU-PT.settings.classes.floralist.hint"
+        },
+        "gourmet": {
+          "name": "FU-PT.settings.classes.gourmet.name",
+          "hint": "FU-PT.settings.classes.gourmet.hint"
         }
       }
     },
@@ -88,6 +96,42 @@
       "thankYou": "Merci d'utiliser le Module ProjectFU-Playtest !",
       "explanation": "Tous les MJ ne souhaitent pas forcément que toutes les classes soeint disponibles dans leur jeu. Nous avons donc ajouté des options de configuration pour les activer/ désactiver. Par défaut, elles sont toutes désactivées, par conséquent si vous souhaitez les utiliser, vous devez d'abord l'activer dans les paramètres.",
       "warning": "Attention lorsque vous désactivez une classe. Les éléments qui ont un lien avec ces fonctionnalités deviendront inutilisable et disparaîtront. La console de votre navigateur et la boîte de dialogue 'Support & Issues' du logiciel afficheront les erreurs. Il s'agit d'un comportement attendu. Pour les éliminer, vous devez vous assurer au préalable qu'aucun élément n'utilise les fonctionnalités de la classe que vous souhaitez désactiver."
+    },
+    "magiseed": {
+      "label": "FU-PT.magiseed.label",
+      "effect1": "FU-PT.magiseed.effect1",
+      "effect2": "FU-PT.magiseed.effect2",
+      "effect3": "FU-PT.magiseed.effect3",
+      "planted": "FU-PT.magiseed.planted",
+      "removed": "FU-PT.magiseed.removed",
+      "gardenLabel": "FU-PT.magiseed.gardenLabel",
+      "growthClock": {
+        "input": "FU-PT.magiseed.growthClock.input",
+        "notFound": "FU-PT.magiseed.growthClock.notFound",
+        "invalid": "FU-PT.magiseed.growthClock.invalid"
+      }
+    },
+    "ingredient": {
+      "label": "FU-PT.ingredient.label",
+      "taste": {
+        "label": "FU-PT.ingredient.taste.label",
+        "bitter": "FU-PT.ingredient.taste.bitter",
+        "salty": "FU-PT.ingredient.taste.salty",
+        "sour": "FU-PT.ingredient.taste.sour",
+        "sweet": "FU-PT.ingredient.taste.sweet",
+        "umami": "FU-PT.ingredient.taste.umami"
+      }
+    },
+    "cookbook": {
+      "label": "FU-PT.cookbook.label",
+      "cooking": {
+        "title": "FU-PT.cookbook.cooking.title",
+        "ingredients": "FU-PT.cookbook.cooking.ingredients",
+        "effects": "FU-PT.cookbook.cooking.effects",
+        "unknownEffect": "FU-PT.cookbook.cooking.unknownEffect",
+        "startCooking": "FU-PT.cookbook.cooking.startCooking",
+        "unknownEffectChat": "FU-PT.cookbook.cooking.unknownEffectChat"
+      }
     }
   }
 }

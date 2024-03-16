@@ -4,7 +4,7 @@
     "quality": "Qualidade",
     "arcanum2": {
       "label": "Rework dos Arcanums",
-      "domain" :"Domínio",
+      "domain": "Domínio",
       "merge": "Benefícios da Fusão",
       "pulse": "Efeitos de Pulso",
       "dismiss": "Efeito de Dispensar"
@@ -81,6 +81,14 @@
         "pilot": {
           "name": "Ativar os recursos do Piloto",
           "hint": "Ativa os recursos de classe 'Veículo', 'Módulo de Armadura', 'Módulo de Arma' e 'Módulo de Suporte', bem como a seção de veículo da ficha de personagem."
+        },
+        "floralist": {
+          "name": "FU-PT.settings.classes.floralist.name",
+          "hint": "FU-PT.settings.classes.floralist.hint"
+        },
+        "gourmet": {
+          "name": "FU-PT.settings.classes.gourmet.name",
+          "hint": "FU-PT.settings.classes.gourmet.hint"
         }
       }
     },
@@ -88,6 +96,42 @@
       "thankYou": "Obrigado por usar o ProjectFU Playtest!",
       "explanation": "Como nem todo GM deseja necessariamente que todas as classes estejam disponíveis em seu jogo, adicionamos opções de configuração para ativá-las/desativá-las. Por padrão, todas as classes estão desabilitadas, o que significa que se você quiser usar alguma delas, você deve primeiro habilitá-las nas configurações.",
       "warning": "Tenha cuidado ao desabilitar uma classe novamente, pois os itens que se referem a esses recursos se tornarão inválidos e desaparecerão. Tanto o console do seu navegador quanto a caixa de diálogo 'Suporte e problemas' do Foundry mostrarão erros. Este é um comportamento esperado. Para se livrar dos erros, você precisa ter certeza de que nenhum item usa os recursos de classe que você deseja desabilitar."
+    },
+    "magiseed": {
+      "label": "FU-PT.magiseed.label",
+      "effect1": "FU-PT.magiseed.effect1",
+      "effect2": "FU-PT.magiseed.effect2",
+      "effect3": "FU-PT.magiseed.effect3",
+      "planted": "FU-PT.magiseed.planted",
+      "removed": "FU-PT.magiseed.removed",
+      "gardenLabel": "FU-PT.magiseed.gardenLabel",
+      "growthClock": {
+        "input": "FU-PT.magiseed.growthClock.input",
+        "notFound": "FU-PT.magiseed.growthClock.notFound",
+        "invalid": "FU-PT.magiseed.growthClock.invalid"
+      }
+    },
+    "ingredient": {
+      "label": "FU-PT.ingredient.label",
+      "taste": {
+        "label": "FU-PT.ingredient.taste.label",
+        "bitter": "FU-PT.ingredient.taste.bitter",
+        "salty": "FU-PT.ingredient.taste.salty",
+        "sour": "FU-PT.ingredient.taste.sour",
+        "sweet": "FU-PT.ingredient.taste.sweet",
+        "umami": "FU-PT.ingredient.taste.umami"
+      }
+    },
+    "cookbook": {
+      "label": "FU-PT.cookbook.label",
+      "cooking": {
+        "title": "FU-PT.cookbook.cooking.title",
+        "ingredients": "FU-PT.cookbook.cooking.ingredients",
+        "effects": "FU-PT.cookbook.cooking.effects",
+        "unknownEffect": "FU-PT.cookbook.cooking.unknownEffect",
+        "startCooking": "FU-PT.cookbook.cooking.startCooking",
+        "unknownEffectChat": "FU-PT.cookbook.cooking.unknownEffectChat"
+      }
     }
   }
 }

@@ -10,6 +10,8 @@ import {SupportModuleDataModel} from "./features/pilot/support-module-data-model
 import {registerClassSettings, registerModuleSettings, SETTINGS} from "./settings.mjs";
 import {MagiseedDataModel} from "./features/floralist/magiseed-data-model.mjs";
 import {GardenManager} from "./features/floralist/garden-manager.mjs";
+import {IngredientDataModel} from "./features/gourmet/ingredient-data-model.mjs";
+import {CookbookDataModel} from "./features/gourmet/cookbook-data-model.mjs";
 
 export const registeredFeatures = {}
 
@@ -84,9 +86,31 @@ Hooks.once('init', async function () {
         })
     }
 
+    if (game.settings.get(MODULE, SETTINGS.classes.gourmet)) {
+        registeredFeatures.ingredient = CONFIG.FU.classFeatureRegistry.register(MODULE, "ingredient", IngredientDataModel)
+        registeredFeatures.cookbook = CONFIG.FU.classFeatureRegistry.register(MODULE, "cookbook", CookbookDataModel)
+
+        Object.assign(templates, {
+            "projectfu-playtest.ingredient.sheet": "modules/projectfu-playtest/templates/gourmet/ingredient-sheet.hbs",
+            "projectfu-playtest.cookbook.sheet": "modules/projectfu-playtest/templates/gourmet/cookbook-sheet.hbs",
+        })
+    }
+
     loadTemplates(templates)
 
     console.log(LOG_MESSAGE, "Class Features registered", registeredFeatures)
+
+    Handlebars.registerHelper("math", function (left, operator, right) {
+        left = parseFloat(left);
+        right = parseFloat(right);
+        return {
+            "+": left + right,
+            "-": left - right,
+            "*": left * right,
+            "/": left / right,
+            "%": left % right
+        }[operator];
+    })
 
     console.log(LOG_MESSAGE, "Initialized")
 });
