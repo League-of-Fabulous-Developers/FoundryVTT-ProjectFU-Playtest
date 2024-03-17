@@ -33,5 +33,19 @@ Module Manifest:\
 * Armor, Weapon and Support Modules
 * Vehicle section for the Character sheet
 
-### Natural Fantasy classes
-* coming soon
+### Floralist
+* Magiseed class feature
+* Garden section for the Character sheet
+* Growth clock integration
+
+### Gourmet
+* Ingredient and Cookbook class features
+* Cooking tool
+* "All You Can Eat" support
+  * use an ActiveEffect to set `flags.projectfu-playtest.AllYouCanEat` to true
+
+### Invoker
+* Invocations class feature
+* Wellspring manager
+* "Inner Wellspring" support
+  * use an ActiveEffect to set `flags.projectfu-playtest.InnerWellspring` to the desired element: `air`,`earth`,`fire`,`lightning` or `water`
