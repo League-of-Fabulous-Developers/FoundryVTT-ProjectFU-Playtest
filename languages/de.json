@@ -89,6 +89,10 @@
         "gourmet": {
           "name": "Gourmet Funktionalität aktivieren",
           "hint": "Aktiviert die 'Zutat' und 'Kochbuch' Klassenmerkmale."
+        },
+        "invoker": {
+          "name": "Anrufer Funktionalität aktivieren",
+          "hint": "Aktiviert das 'Anrufungen' Klassenmerkmal und den Urquell-Manager."
         }
       }
     },
@@ -131,6 +135,67 @@
         "unknownEffect": "Unbekannter Effekt! Koche diese Delikatesse um herauszufinden, welchen Effekt diese Kombination hat!",
         "startCooking": "Kochen!",
         "unknownEffectChat": "Unbekannter Effekt! Erzeuge den Effekt mittels der Delikatessen Effekt Tabelle und vergiss nicht ihn in deinem Kochbuch einzutragen."
+      }
+    },
+    "invocations": {
+      "label": "Anrufungen",
+      "name": "Anrufung",
+      "element": "Element",
+      "rank": {
+        "select": "Rang",
+        "basic": "Grundlegend",
+        "advanced": "Fortgeschritten",
+        "superior": "Überragend"
+      },
+      "basic": {
+        "label": "Grundlegende Anrufung",
+        "name": "Grundlegende {element} Anrufung"
+      },
+      "advanced": {
+        "label": "Fortgeschrittene Anrufung",
+        "name": "Fortgeschrittene {element} Anrufung"
+      },
+      "superior": {
+        "label": "Überragende Anrufung",
+        "nameFirst": "Erste überragende {element} Anrufung",
+        "nameSecond": "Zweite überragende {element} Anrufung"
+      },
+      "wellspring": {
+        "manager": {
+          "title": "Aktive Urquellen",
+          "global": "Global",
+          "active": "Aktive Szene",
+          "current": "Aktuelle Szene",
+          "clearTooltip": "Umschalt + Klick um aktive Urquellen zu leeren."
+        },
+        "air": {
+          "name": "Urquell des Windes",
+          "nameShort": "Wind",
+          "element": "Aero"
+        },
+        "earth": {
+          "name": "Urquell der Erde",
+          "nameShort": "Erde",
+          "element": "Geo"
+        },
+        "fire": {
+          "name": "Urquell des Feuers",
+          "nameShort": "Feuer",
+          "element": "Pyro"
+        },
+        "lightning": {
+          "name": "Urquell der Blitze",
+          "nameShort": "Blitz",
+          "element": "Electro"
+        },
+        "water": {
+          "name": "Urquell des Wassers",
+          "nameShort": "Wasser",
+          "element": "Hydro"
+        }
+      },
+      "dialog": {
+        "title": "Anrufung auswählen"
       }
     }
   }

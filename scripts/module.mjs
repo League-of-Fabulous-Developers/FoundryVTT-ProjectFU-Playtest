@@ -12,6 +12,9 @@ import {MagiseedDataModel} from "./features/floralist/magiseed-data-model.mjs";
 import {GardenManager} from "./features/floralist/garden-manager.mjs";
 import {IngredientDataModel} from "./features/gourmet/ingredient-data-model.mjs";
 import {CookbookDataModel} from "./features/gourmet/cookbook-data-model.mjs";
+import {GameWellspringManager} from "./features/invoker/game-wellspring-manager.mjs";
+import {InvocationsDataModel} from "./features/invoker/invocations-data-model.mjs";
+import {ActorWellspringManager} from "./features/invoker/actor-wellspring-manager.mjs";
 
 export const registeredFeatures = {}
 
@@ -96,26 +99,41 @@ Hooks.once('init', async function () {
         })
     }
 
+    if (game.settings.get(MODULE, SETTINGS.classes.invoker)) {
+        GameWellspringManager.registerSettings();
+        Hooks.on("getSceneControlButtons", GameWellspringManager.onGetSceneControlButton)
+        Hooks.on("projectfu.actor.dataPrepared", ActorWellspringManager.onActorPrepared)
+
+        registeredFeatures.invocations = CONFIG.FU.classFeatureRegistry.register(MODULE, "invocations", InvocationsDataModel)
+
+        Object.assign(templates, {
+            "projectfu-playtest.invocations.sheet": "modules/projectfu-playtest/templates/invoker/invocations-sheet.hbs",
+            "projectfu-playtest.invocations.preview": "modules/projectfu-playtest/templates/invoker/invocations-preview.hbs"
+        })
+    }
+
     loadTemplates(templates)
 
     console.log(LOG_MESSAGE, "Class Features registered", registeredFeatures)
 
-    Handlebars.registerHelper("math", function (left, operator, right) {
-        left = parseFloat(left);
-        right = parseFloat(right);
-        return {
-            "+": left + right,
-            "-": left - right,
-            "*": left * right,
-            "/": left / right,
-            "%": left % right
-        }[operator];
-    })
+    Handlebars.registerHelper("math", mathHelper)
 
     console.log(LOG_MESSAGE, "Initialized")
 });
 
-Hooks.once("ready", async function() {
+function mathHelper(left, operator, right) {
+    left = parseFloat(left);
+    right = parseFloat(right);
+    return {
+        "+": left + right,
+        "-": left - right,
+        "*": left * right,
+        "/": left / right,
+        "%": left % right
+    }[operator];
+}
+
+Hooks.once("ready", async function () {
     if (game.settings.get(MODULE, SETTINGS.welcomeMessage) && game.user === game.users.activeGM) {
         /** @type ChatMessageData */
         const message = {

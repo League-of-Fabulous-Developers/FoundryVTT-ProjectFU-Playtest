@@ -89,6 +89,10 @@
         "gourmet": {
           "name": "Activate Gourmet features",
           "hint": "Actives the 'Ingredient' and 'Cookbook' class feature types."
+        },
+        "invoker": {
+          "name": "Activate Invoker features",
+          "hint": "Activates the 'Invocations' class feature type and the Wellspring manager."
         }
       }
     },
@@ -131,6 +135,67 @@
         "unknownEffect": "Unknown Effect! Get cooking to discover which effect this combination provides!",
         "startCooking": "Start Cooking!",
         "unknownEffectChat": "Unknown Effect! Generate it using the Delicacy Effect table and don't forget to save it in your cookbook."
+      }
+    },
+    "invocations": {
+      "label": "Invocations",
+      "name": "Invocation",
+      "element": "Element",
+      "rank": {
+        "select": "Rank",
+        "basic": "Basic",
+        "advanced": "Advanced",
+        "superior": "Superior"
+      },
+      "basic": {
+        "label": "Basic Invocation",
+        "name": "Basic {element} invocation"
+      },
+      "advanced": {
+        "label": "Advanced Invocation",
+        "name": "Advanced {element} invocation"
+      },
+      "superior": {
+        "label": "Superior Invocations",
+        "nameFirst": "First superior {element} invocation",
+        "nameSecond": "Second superior {element} invocation"
+      },
+      "wellspring": {
+        "manager": {
+          "title": "Active Wellsprings",
+          "global": "Global",
+          "active": "Active Scene",
+          "current": "Current Scene",
+          "clearTooltip": "Shift + Click to clear active wellsprings."
+        },
+        "air": {
+          "name": "Air wellspring",
+          "nameShort": "Air",
+          "element": "Aero"
+        },
+        "earth": {
+          "name": "Earth wellspring",
+          "nameShort": "Earth",
+          "element": "Geo"
+        },
+        "fire": {
+          "name": "Fire wellspring",
+          "nameShort": "Fire",
+          "element": "Pyro"
+        },
+        "lightning": {
+          "name": "Lightning wellspring",
+          "nameShort": "Lightning",
+          "element": "Electro"
+        },
+        "water": {
+          "name": "Water wellspring",
+          "nameShort": "Water",
+          "element": "Hydro"
+        }
+      },
+      "dialog": {
+        "title": "Choose Invocation"
       }
     }
   }

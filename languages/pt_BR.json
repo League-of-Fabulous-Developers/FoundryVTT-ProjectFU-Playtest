@@ -89,6 +89,10 @@
         "gourmet": {
           "name": "FU-PT.settings.classes.gourmet.name",
           "hint": "FU-PT.settings.classes.gourmet.hint"
+        },
+        "invoker": {
+          "name": "FU-PT.settings.classes.invoker.name",
+          "hint": "FU-PT.settings.classes.invoker.hint"
         }
       }
     },
@@ -131,6 +135,67 @@
         "unknownEffect": "FU-PT.cookbook.cooking.unknownEffect",
         "startCooking": "FU-PT.cookbook.cooking.startCooking",
         "unknownEffectChat": "FU-PT.cookbook.cooking.unknownEffectChat"
+      }
+    },
+    "invocations": {
+      "label": "FU-PT.invocations.label",
+      "name": "FU-PT.invocations.name",
+      "element": "FU-PT.invocations.element",
+      "rank": {
+        "select": "FU-PT.invocations.rank.select",
+        "basic": "FU-PT.invocations.rank.basic",
+        "advanced": "FU-PT.invocations.rank.advanced",
+        "superior": "FU-PT.invocations.rank.superior"
+      },
+      "basic": {
+        "label": "FU-PT.invocations.basic.label",
+        "name": ""
+      },
+      "advanced": {
+        "label": "FU-PT.invocations.advanced.label",
+        "name": "FU-PT.invocations.advanced.name"
+      },
+      "superior": {
+        "label": "FU-PT.invocations.superior.label",
+        "nameFirst": "",
+        "nameSecond": "FU-PT.invocations.superior.nameSecond"
+      },
+      "wellspring": {
+        "manager": {
+          "title": "FU-PT.invocations.wellspring.manager.title",
+          "global": "FU-PT.invocations.wellspring.manager.global",
+          "active": "FU-PT.invocations.wellspring.manager.active",
+          "current": "FU-PT.invocations.wellspring.manager.current",
+          "clearTooltip": "FU-PT.invocations.wellspring.manager.clearTooltip"
+        },
+        "air": {
+          "name": "FU-PT.invocations.wellspring.air.name",
+          "nameShort": "FU-PT.invocations.wellspring.air.nameShort",
+          "element": "FU-PT.invocations.wellspring.air.element"
+        },
+        "earth": {
+          "name": "FU-PT.invocations.wellspring.earth.name",
+          "nameShort": "FU-PT.invocations.wellspring.earth.nameShort",
+          "element": "FU-PT.invocations.wellspring.earth.element"
+        },
+        "fire": {
+          "name": "FU-PT.invocations.wellspring.fire.name",
+          "nameShort": "FU-PT.invocations.wellspring.fire.nameShort",
+          "element": "FU-PT.invocations.wellspring.fire.element"
+        },
+        "lightning": {
+          "name": "FU-PT.invocations.wellspring.lightning.name",
+          "nameShort": "FU-PT.invocations.wellspring.lightning.nameShort",
+          "element": "FU-PT.invocations.wellspring.lightning.element"
+        },
+        "water": {
+          "name": "FU-PT.invocations.wellspring.water.name",
+          "nameShort": "FU-PT.invocations.wellspring.water.nameShort",
+          "element": "FU-PT.invocations.wellspring.water.element"
+        }
+      },
+      "dialog": {
+        "title": "FU-PT.invocations.dialog.title"
       }
     }
   }

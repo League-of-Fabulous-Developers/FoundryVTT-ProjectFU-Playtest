@@ -1,11 +1,11 @@
 .projectfu-playtest-class-feature {
 }
 
-.projectfu-playtest-class-feature fieldset, .cooking-app fieldset {
+.projectfu-playtest-class-feature fieldset, .cooking-app fieldset, .wellspring-manager-app fieldset, .invocations-sheet fieldset, .invocations-selection fieldset {
     margin-bottom: .5em;
 }
 
-.vehicle-section,.associated-therioforms, .garden-section {
+.vehicle-section,.associated-therioforms, .garden-section, .invocations-tabs {
     margin-bottom: 0.5em;
 }
 
@@ -79,7 +79,7 @@
     margin: 0.5em;
 }
 
-.cooking-app .gap-05 {
+.cooking-app .gap-05, .invocations-selection-app .gap-05 {
     gap: 0.5em;
 }
 
@@ -126,4 +126,90 @@
 
 .cooking-message fieldset.ingredients-list > legend, .cooking-message fieldset.effect-list > legend {
     text-transform: uppercase;
+}
+
+.fupt-waves {
+    background-image: url("/modules/projectfu-playtest/styles/assets/waves.svg");
+}
+
+.wellspring-manager-app .window-content > *, .invocations-selection-app .window-content > * {
+    margin: 0.5em;
+}
+
+.wellspring-manager-app .wellsprings {
+    padding: 0.5em;
+}
+
+.wellspring-manager-app .wellsprings > .flexrow {
+    gap: 0.5em;
+}
+
+.wellspring-manager-app .wellspring, .wellspring-preview .wellspring {
+    aspect-ratio: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wellspring-preview {
+    gap: 0.5em
+}
+
+.wellspring-preview .wellspring {
+    max-width: var(--font-size-28);
+}
+
+.wellspring-manager-app .wellspring.inactive, .wellspring-preview .wellspring.inactive {
+    filter: grayscale(100%);
+}
+
+.invocations-sheet fieldset, .invocations-selection fieldset {
+    padding: 0.5em;
+}
+
+.invocations-sheet fieldset fieldset, .invocations-selection fieldset fieldset {
+    box-shadow: color-mix(in srgb, #2b4a42, transparent 50%) 2px 2px;
+}
+
+.invocations-sheet .invocation-description .editor {
+    min-height: 10em;
+    max-height: 10em;
+}
+
+.invocations-selection .fun {
+    display: inline-block;
+}
+
+.invocation-message header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.invocation-message .invocation-name {
+    font-family: alice;
+    line-height: 1.2;
+    color: #ffffff;
+    font-size: 26px;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 3px 6px #2b4a42;
+    border-style: solid;
+    border-width: thin;
+    border-color: #f5f5dc;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #3d665a;
+    overflow-wrap: anywhere;
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.invocation-message .invocation-icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    filter: drop-shadow(2px 2px 4px #000000);
+    width: 48px;
+    height: 48px;
 }
