@@ -77,8 +77,8 @@ export function registerClassSettings() {
     })
 
     game.settings.register(MODULE, SETTINGS.classes.gourmet, {
-        name: game.i18n.localize("FU-PT.classes.gourmet.name"),
-        hint: game.i18n.localize("FU-PT.classes.gourmet.hint"),
+        name: game.i18n.localize("FU-PT.settings.classes.gourmet.name"),
+        hint: game.i18n.localize("FU-PT.settings.classes.gourmet.hint"),
         scope: "world",
         config: true,
         requiresReload: true,
@@ -87,8 +87,8 @@ export function registerClassSettings() {
     })
 
     game.settings.register(MODULE, SETTINGS.classes.invoker, {
-        name: game.i18n.localize("FU-PT.classes.invoker.name"),
-        hint: game.i18n.localize("FU-PT.classes.invoker.hint"),
+        name: game.i18n.localize("FU-PT.settings.classes.invoker.name"),
+        hint: game.i18n.localize("FU-PT.settings.classes.invoker.hint"),
         scope: "world",
         config: true,
         requiresReload: true,

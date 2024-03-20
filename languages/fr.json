@@ -83,16 +83,16 @@
           "hint": "Activer le 'Véhicule, le 'Module d'armure', le 'Module d'arme, le 'Module de support' comme compétence de classe, et également la séction véhicule de la fiche de personnage."
         },
         "floralist": {
-          "name": "FU-PT.settings.classes.floralist.name",
-          "hint": "FU-PT.settings.classes.floralist.hint"
+          "name": "Floraliste",
+          "hint": "Active le type d'atout de classe 'Magigraines', la section jardin de la feuille de personnage et l'intégration de l'Horloge de Croissance pour les autres capacités."
         },
         "gourmet": {
-          "name": "FU-PT.settings.classes.gourmet.name",
-          "hint": "FU-PT.settings.classes.gourmet.hint"
+          "name": "Gourmet",
+          "hint": "Active les types d'atouts de classes 'Ingrédient' et 'Livre de cuisine'."
         },
         "invoker": {
-          "name": "FU-PT.settings.classes.invoker.name",
-          "hint": "FU-PT.settings.classes.invoker.hint"
+          "name": "Invocateur",
+          "hint": "Active les atouts de classes 'Invocations' et le gestionnaire Sources."
         }
       }
     },
@@ -102,100 +102,100 @@
       "warning": "Attention lorsque vous désactivez une classe. Les éléments qui ont un lien avec ces fonctionnalités deviendront inutilisable et disparaîtront. La console de votre navigateur et la boîte de dialogue 'Support & Issues' du logiciel afficheront les erreurs. Il s'agit d'un comportement attendu. Pour les éliminer, vous devez vous assurer au préalable qu'aucun élément n'utilise les fonctionnalités de la classe que vous souhaitez désactiver."
     },
     "magiseed": {
-      "label": "FU-PT.magiseed.label",
-      "effect1": "FU-PT.magiseed.effect1",
-      "effect2": "FU-PT.magiseed.effect2",
-      "effect3": "FU-PT.magiseed.effect3",
-      "planted": "FU-PT.magiseed.planted",
-      "removed": "FU-PT.magiseed.removed",
-      "gardenLabel": "FU-PT.magiseed.gardenLabel",
+      "label": "Magigraine",
+      "effect1": "Effet 1",
+      "effect2": "Effet 2",
+      "effect3": "Effet 3",
+      "planted": "Magigraine plantée",
+      "removed": "Magigraine retirée",
+      "gardenLabel": "Jardin",
       "growthClock": {
-        "input": "FU-PT.magiseed.growthClock.input",
-        "notFound": "FU-PT.magiseed.growthClock.notFound",
-        "invalid": "FU-PT.magiseed.growthClock.invalid"
+        "input": "Est une Horloge de Croissance ?",
+        "notFound": "Aucune Horloge de Croissance trouvée. Veuillez marquer une autre capacité avec une Horloge comme étant à la fois un favori et une Horloge de Croissance dédiée",
+        "invalid": "Les sections de l'Horloge de Croissance remplies ne correspondent pas à un effet"
       }
     },
     "ingredient": {
-      "label": "FU-PT.ingredient.label",
+      "label": "Ingrédients",
       "taste": {
-        "label": "FU-PT.ingredient.taste.label",
-        "bitter": "FU-PT.ingredient.taste.bitter",
-        "salty": "FU-PT.ingredient.taste.salty",
-        "sour": "FU-PT.ingredient.taste.sour",
-        "sweet": "FU-PT.ingredient.taste.sweet",
-        "umami": "FU-PT.ingredient.taste.umami"
+        "label": "Goûts",
+        "bitter": "Amer",
+        "salty": "Salé",
+        "sour": "Aigre",
+        "sweet": "Sucré",
+        "umami": "Umami"
       }
     },
     "cookbook": {
-      "label": "FU-PT.cookbook.label",
+      "label": "Livre de recette",
       "cooking": {
-        "title": "FU-PT.cookbook.cooking.title",
-        "ingredients": "FU-PT.cookbook.cooking.ingredients",
-        "effects": "FU-PT.cookbook.cooking.effects",
-        "unknownEffect": "FU-PT.cookbook.cooking.unknownEffect",
-        "startCooking": "FU-PT.cookbook.cooking.startCooking",
-        "unknownEffectChat": "FU-PT.cookbook.cooking.unknownEffectChat"
+        "title": "Cuisiner",
+        "ingredients": "Ingrédients",
+        "effects": "Effets",
+        "unknownEffect": "Effet inconnu ! Cuisinez pour découvrir l'effet de cette combinaison !",
+        "startCooking": "Commencez à cuisiner !",
+        "unknownEffectChat": "Effet inconnu ! Générez-le à l'aide de la table des effets des mets et n'oubliez pas de l'enregistrer dans votre livre de recette."
       }
     },
     "invocations": {
-      "label": "FU-PT.invocations.label",
-      "name": "FU-PT.invocations.name",
-      "element": "FU-PT.invocations.element",
+      "label": "Invocations",
+      "name": "Invocation",
+      "element": "Élément",
       "rank": {
-        "select": "FU-PT.invocations.rank.select",
-        "basic": "FU-PT.invocations.rank.basic",
-        "advanced": "FU-PT.invocations.rank.advanced",
-        "superior": "FU-PT.invocations.rank.superior"
+        "select": "Rang",
+        "basic": "De base",
+        "advanced": "Avancé",
+        "superior": "Supérieur"
       },
       "basic": {
-        "label": "FU-PT.invocations.basic.label",
-        "name": ""
+        "label": "Invocations de base",
+        "name": "Invocation de base (élément)"
       },
       "advanced": {
-        "label": "FU-PT.invocations.advanced.label",
-        "name": "FU-PT.invocations.advanced.name"
+        "label": "Invocations avancées",
+        "name": "Invocation avancée (élément)"
       },
       "superior": {
-        "label": "FU-PT.invocations.superior.label",
-        "nameFirst": "",
-        "nameSecond": "FU-PT.invocations.superior.nameSecond"
+        "label": "Invocations supérieures",
+        "nameFirst": "Première invocation supérieure (élément)",
+        "nameSecond": "Seconde invocation supérieure (élément)"
       },
       "wellspring": {
         "manager": {
-          "title": "FU-PT.invocations.wellspring.manager.title",
-          "global": "FU-PT.invocations.wellspring.manager.global",
-          "active": "FU-PT.invocations.wellspring.manager.active",
-          "current": "FU-PT.invocations.wellspring.manager.current",
-          "clearTooltip": "FU-PT.invocations.wellspring.manager.clearTooltip"
+          "title": "Sources actives",
+          "global": "Global",
+          "active": "Scène active",
+          "current": "Scène actuelle",
+          "clearTooltip": "Shift + Clique pour supprimer les sources actives"
         },
         "air": {
-          "name": "FU-PT.invocations.wellspring.air.name",
-          "nameShort": "FU-PT.invocations.wellspring.air.nameShort",
-          "element": "FU-PT.invocations.wellspring.air.element"
+          "name": "Source d'air",
+          "nameShort": "Air",
+          "element": "Aero"
         },
         "earth": {
-          "name": "FU-PT.invocations.wellspring.earth.name",
-          "nameShort": "FU-PT.invocations.wellspring.earth.nameShort",
-          "element": "FU-PT.invocations.wellspring.earth.element"
+          "name": "Source de terre",
+          "nameShort": "Terre",
+          "element": "Geo"
         },
         "fire": {
-          "name": "FU-PT.invocations.wellspring.fire.name",
-          "nameShort": "FU-PT.invocations.wellspring.fire.nameShort",
-          "element": "FU-PT.invocations.wellspring.fire.element"
+          "name": "Source de feu",
+          "nameShort": "Feu",
+          "element": "Pyro"
         },
         "lightning": {
-          "name": "FU-PT.invocations.wellspring.lightning.name",
-          "nameShort": "FU-PT.invocations.wellspring.lightning.nameShort",
-          "element": "FU-PT.invocations.wellspring.lightning.element"
+          "name": "Source de foudre",
+          "nameShort": "Foudre",
+          "element": "Electro"
         },
         "water": {
-          "name": "FU-PT.invocations.wellspring.water.name",
-          "nameShort": "FU-PT.invocations.wellspring.water.nameShort",
-          "element": "FU-PT.invocations.wellspring.water.element"
+          "name": "Source d'eau",
+          "nameShort": "Eau",
+          "element": "Hydro"
         }
       },
       "dialog": {
-        "title": "FU-PT.invocations.dialog.title"
+        "title": "Choisir l'invocation"
       }
     }
   }
