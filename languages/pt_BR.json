@@ -83,16 +83,16 @@
           "hint": "Ativa os recursos de classe 'Veículo', 'Módulo de Armadura', 'Módulo de Arma' e 'Módulo de Suporte', bem como a seção de veículo da ficha de personagem."
         },
         "floralist": {
-          "name": "FU-PT.settings.classes.floralist.name",
-          "hint": "FU-PT.settings.classes.floralist.hint"
+          "name": "Floralista",
+          "hint": "Ativa o recurso de classe 'Magiseed', a seção de jardim da ficha de personagem e a integração do Relógio de Crescimento para Habilidades Diversas."
         },
         "gourmet": {
-          "name": "FU-PT.settings.classes.gourmet.name",
-          "hint": "FU-PT.settings.classes.gourmet.hint"
+          "name": "Gourmet",
+          "hint": "Ativa os recursos de classe 'Ingrediente' e 'Livro de Receitas"
         },
         "invoker": {
-          "name": "FU-PT.settings.classes.invoker.name",
-          "hint": "FU-PT.settings.classes.invoker.hint"
+          "name": "Invocador",
+          "hint": "Ativa os recursos de classe 'Invocações' e o gerenciador de Mananciais"
         }
       }
     },
@@ -102,100 +102,100 @@
       "warning": "Tenha cuidado ao desabilitar uma classe novamente, pois os itens que se referem a esses recursos se tornarão inválidos e desaparecerão. Tanto o console do seu navegador quanto a caixa de diálogo 'Suporte e problemas' do Foundry mostrarão erros. Este é um comportamento esperado. Para se livrar dos erros, você precisa ter certeza de que nenhum item usa os recursos de classe que você deseja desabilitar."
     },
     "magiseed": {
-      "label": "FU-PT.magiseed.label",
-      "effect1": "FU-PT.magiseed.effect1",
-      "effect2": "FU-PT.magiseed.effect2",
-      "effect3": "FU-PT.magiseed.effect3",
-      "planted": "FU-PT.magiseed.planted",
-      "removed": "FU-PT.magiseed.removed",
-      "gardenLabel": "FU-PT.magiseed.gardenLabel",
+      "label": "Magiseed",
+      "effect1": "Efeito 1",
+      "effect2": "Efeito 2",
+      "effect3": "Efeito 3",
+      "planted": "Magiseed Plantada",
+      "removed": "Magiseed Removida",
+      "gardenLabel": "Jardim",
       "growthClock": {
-        "input": "FU-PT.magiseed.growthClock.input",
-        "notFound": "FU-PT.magiseed.growthClock.notFound",
-        "invalid": "FU-PT.magiseed.growthClock.invalid"
+        "input": "É um Relógio de Crescimento?",
+        "notFound": "Nenhum Relógio de Crescimento encontrado. Por favor, marque uma Habilidade Variada com um relógio como favorita e como Relógio de Crescimento dedicado",
+        "invalid": "As seções preenchidas do Relógio de Crescimento não correspondem a um efeito"
       }
     },
     "ingredient": {
-      "label": "FU-PT.ingredient.label",
+      "label": "Ingrediente",
       "taste": {
-        "label": "FU-PT.ingredient.taste.label",
-        "bitter": "FU-PT.ingredient.taste.bitter",
-        "salty": "FU-PT.ingredient.taste.salty",
-        "sour": "FU-PT.ingredient.taste.sour",
-        "sweet": "FU-PT.ingredient.taste.sweet",
-        "umami": "FU-PT.ingredient.taste.umami"
+        "label": "Sabor",
+        "bitter": "Amargo",
+        "salty": "Salgado",
+        "sour": "Azedo",
+        "sweet": "Doce",
+        "umami": "Umami"
       }
     },
     "cookbook": {
-      "label": "FU-PT.cookbook.label",
+      "label": "Livro de Receitas",
       "cooking": {
-        "title": "FU-PT.cookbook.cooking.title",
-        "ingredients": "FU-PT.cookbook.cooking.ingredients",
-        "effects": "FU-PT.cookbook.cooking.effects",
-        "unknownEffect": "FU-PT.cookbook.cooking.unknownEffect",
-        "startCooking": "FU-PT.cookbook.cooking.startCooking",
-        "unknownEffectChat": "FU-PT.cookbook.cooking.unknownEffectChat"
+        "title": "Cozinhar",
+        "ingredients": "Ingredientes",
+        "effects": "Efeitos",
+        "unknownEffect": "Efeito desconhecido! Comece a cozinhar para descobrir qual efeito essa combinação proporciona!",
+        "startCooking": "Comece a Cozinhar!",
+        "unknownEffectChat": "Efeito Desconhecido! Gere-o utilizando a tabela de Efeitos de Delícia e não se esqueça de salvá-lo no seu livro de receitas"
       }
     },
     "invocations": {
-      "label": "FU-PT.invocations.label",
-      "name": "FU-PT.invocations.name",
-      "element": "FU-PT.invocations.element",
+      "label": "Invocações",
+      "name": "Invocação",
+      "element": "Elemento",
       "rank": {
-        "select": "FU-PT.invocations.rank.select",
-        "basic": "FU-PT.invocations.rank.basic",
-        "advanced": "FU-PT.invocations.rank.advanced",
-        "superior": "FU-PT.invocations.rank.superior"
+        "select": "Ranque",
+        "basic": "Básico",
+        "advanced": "Avançado",
+        "superior": "Superior"
       },
       "basic": {
-        "label": "FU-PT.invocations.basic.label",
-        "name": ""
+        "label": "Invocação Básica",
+        "name": "Invocação {element} Básica"
       },
       "advanced": {
-        "label": "FU-PT.invocations.advanced.label",
-        "name": "FU-PT.invocations.advanced.name"
+        "label": "Invocação Avançada",
+        "name": "Invocação {element} Avançada"
       },
       "superior": {
-        "label": "FU-PT.invocations.superior.label",
-        "nameFirst": "",
-        "nameSecond": "FU-PT.invocations.superior.nameSecond"
+        "label": "Invocações Superiores",
+        "nameFirst": "Primeira Invocação {element} Superior",
+        "nameSecond": "Segunda Invocação {element} Superior"
       },
       "wellspring": {
         "manager": {
-          "title": "FU-PT.invocations.wellspring.manager.title",
-          "global": "FU-PT.invocations.wellspring.manager.global",
-          "active": "FU-PT.invocations.wellspring.manager.active",
-          "current": "FU-PT.invocations.wellspring.manager.current",
-          "clearTooltip": "FU-PT.invocations.wellspring.manager.clearTooltip"
+          "title": "Mananciais Ativos",
+          "global": "Global",
+          "active": "Cena Ativa",
+          "current": "Cena Atual",
+          "clearTooltip": "Shift + Clique para limpar os Mananciais Ativos."
         },
         "air": {
-          "name": "FU-PT.invocations.wellspring.air.name",
-          "nameShort": "FU-PT.invocations.wellspring.air.nameShort",
-          "element": "FU-PT.invocations.wellspring.air.element"
+          "name": "Manancial do Ar",
+          "nameShort": "Ar",
+          "element": "Aero"
         },
         "earth": {
-          "name": "FU-PT.invocations.wellspring.earth.name",
-          "nameShort": "FU-PT.invocations.wellspring.earth.nameShort",
-          "element": "FU-PT.invocations.wellspring.earth.element"
+          "name": "Manancial da Terra",
+          "nameShort": "Terra",
+          "element": "Geo"
         },
         "fire": {
-          "name": "FU-PT.invocations.wellspring.fire.name",
-          "nameShort": "FU-PT.invocations.wellspring.fire.nameShort",
-          "element": "FU-PT.invocations.wellspring.fire.element"
+          "name": "Manancial do Fogo",
+          "nameShort": "Fogo",
+          "element": "Pyro"
         },
         "lightning": {
-          "name": "FU-PT.invocations.wellspring.lightning.name",
-          "nameShort": "FU-PT.invocations.wellspring.lightning.nameShort",
-          "element": "FU-PT.invocations.wellspring.lightning.element"
+          "name": "Manancial do Relâmpago",
+          "nameShort": "Relâmpago",
+          "element": "Electro"
         },
         "water": {
-          "name": "FU-PT.invocations.wellspring.water.name",
-          "nameShort": "FU-PT.invocations.wellspring.water.nameShort",
-          "element": "FU-PT.invocations.wellspring.water.element"
+          "name": "Manancial da Água",
+          "nameShort": "Água",
+          "element": "Hydro"
         }
       },
       "dialog": {
-        "title": "FU-PT.invocations.dialog.title"
+        "title": "Escolha a Invocação"
       }
     }
   }
