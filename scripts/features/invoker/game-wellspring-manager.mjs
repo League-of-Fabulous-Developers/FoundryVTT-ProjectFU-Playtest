@@ -33,7 +33,7 @@ export class GameWellspringManager extends Application {
         tokenControl.tools.push({
             name: GameWellspringManager.name,
             title: "FU-PT.invocations.wellspring.manager.title",
-            icon: "fas fa-solar-system",
+            icon: "fas fa-earth-asia",
             button: true,
             visible: game.user.isGM,
             onClick: () => (GameWellspringManager.#app ??= new GameWellspringManager()).render(true)
