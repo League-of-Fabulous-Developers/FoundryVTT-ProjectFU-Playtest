@@ -72,7 +72,7 @@ export class MagiseedDataModel extends projectfu.RollableClassFeatureDataModel {
                 effect = item.system.data.effect1;
             } else if (filledSections === 2) {
                 effect = item.system.data.effect2;
-            } else if (filledSections === 3) {
+            } else if (filledSections >= 3) {
                 effect = item.system.data.effect3;
             } else {
                 effect = game.i18n.localize("FU-PT.magiseed.growthClock.invalid")
