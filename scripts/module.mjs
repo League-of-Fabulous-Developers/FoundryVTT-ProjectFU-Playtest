@@ -101,8 +101,6 @@ Hooks.once('init', async function () {
 
     if (game.settings.get(MODULE, SETTINGS.classes.invoker)) {
         GameWellspringManager.registerSettings();
-        Hooks.on("getSceneControlButtons", GameWellspringManager.onGetSceneControlButton)
-        Hooks.on("projectfu.actor.dataPrepared", ActorWellspringManager.onActorPrepared)
 
         registeredFeatures.invocations = CONFIG.FU.classFeatureRegistry.register(MODULE, "invocations", InvocationsDataModel)
 
