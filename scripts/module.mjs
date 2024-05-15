@@ -1,13 +1,14 @@
+import {CampingActivityDataModel} from "./features/camping/camping-data-model.mjs";
 import {Arcanum2DataModel} from "./features/arcanist2/arcanum2-data-model.mjs";
 import {PsychicGiftDataModel} from "./features/esper/psychic-gift-data-model.mjs";
 import {TherioformDataModel} from "./features/mutant/therioform-data-model.mjs";
 import {ArmorModuleDataModel} from "./features/pilot/armor-module-data-model.mjs";
 import {WeaponModuleDataModel} from "./features/pilot/weapon-module-data-model.mjs";
 import {VehicleDataModel} from "./features/pilot/vehicle-data-model.mjs";
-import {LOG_MESSAGE, MODULE} from "./constants.mjs";
+import {LOG_MESSAGE, MODULE, SYSTEM} from "./constants.mjs";
 import {VehicleManager} from "./features/pilot/vehicle-manager.mjs";
 import {SupportModuleDataModel} from "./features/pilot/support-module-data-model.mjs";
-import {registerClassSettings, registerModuleSettings, SETTINGS} from "./settings.mjs";
+import {registerClassSettings, registerModuleSettings, SETTINGS, SYSTEMSETTINGS} from "./settings.mjs";
 import {MagiseedDataModel} from "./features/floralist/magiseed-data-model.mjs";
 import {GardenManager} from "./features/floralist/garden-manager.mjs";
 import {IngredientDataModel} from "./features/gourmet/ingredient-data-model.mjs";
@@ -28,6 +29,15 @@ Hooks.once('init', async function () {
     console.log(LOG_MESSAGE, "Registering class features")
     const templates = {}
 
+    if (game.settings.get(SYSTEM, SYSTEMSETTINGS.optionCampingRules)) {    
+        registeredFeatures.camping = CONFIG.FU.optionalFeatureRegistry.register(MODULE, "camping", CampingActivityDataModel)
+
+        Object.assign(templates, {
+            "projectfu-playtest.camping.sheet": "modules/projectfu-playtest/templates/camping/camping-sheet.hbs",
+            "projectfu-playtest.camping.preview": "modules/projectfu-playtest/templates/camping/camping-preview.hbs",
+        })
+    }
+    
     if (game.settings.get(MODULE, SETTINGS.classes.arcanist2)) {
         registeredFeatures.arcanum2 = CONFIG.FU.classFeatureRegistry.register(MODULE, "arcanum2", Arcanum2DataModel)
 

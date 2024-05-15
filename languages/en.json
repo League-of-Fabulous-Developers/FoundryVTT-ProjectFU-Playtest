@@ -2,6 +2,9 @@
   "FU-PT": {
     "description": "Description",
     "quality": "Quality",
+    "camping": {
+      "label": "Camping Activity"
+    },
     "arcanum2": {
       "label": "Arcanum Rework",
       "domain": "Domain",

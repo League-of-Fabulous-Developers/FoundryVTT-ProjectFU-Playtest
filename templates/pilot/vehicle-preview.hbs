@@ -1,7 +1,7 @@
-<div class="flexrow">
+<div class="flexrow item-full start">
     <div>
-        <div>{{localize 'FU-PT.vehicle.frame'}}: {{localize (lookup additionalData.frames system.data.frame)}}</div>
-        <div>{{system.summary.value}}</div>
+        <div><b>{{localize 'FU-PT.vehicle.frame'}}:</b> {{localize (lookup additionalData.frames system.data.frame)}}</div>
+        <span class="description-effect">{{system.summary.value}}</span>
     </div>
     <div class="flex0">
         <a data-action="toggleActiveVehicle" data-item-id="{{item.id}}"><i class="fas {{#if additionalData.active}}fa-circle-check{{else}}fa-circle fa-thin{{/if}}"></i></a>

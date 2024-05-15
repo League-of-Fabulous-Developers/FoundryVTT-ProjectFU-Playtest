@@ -2,6 +2,9 @@
   "FU-PT": {
     "description": "Beschreibung",
     "quality": "Eigenschaft",
+    "camping": {
+      "label": "Lageraktivitäten"
+    },
     "arcanum2": {
       "label": "Arkanum Rework",
       "domain": "Herrschaftsbereiche",

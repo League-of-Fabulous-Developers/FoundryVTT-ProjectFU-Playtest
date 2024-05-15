@@ -1,4 +1,8 @@
 import {MODULE} from "./constants.mjs";
+import { SETTINGS as SystemSettings } from "../../../systems/projectfu/module/settings.js";
+
+// Export the system settings directly
+export const SYSTEMSETTINGS = SystemSettings;
 
 export const SETTINGS = {
     welcomeMessage: "welcomeMessage",

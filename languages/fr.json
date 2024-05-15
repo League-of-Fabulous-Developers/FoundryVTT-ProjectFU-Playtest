@@ -2,6 +2,9 @@
   "FU-PT": {
     "description": "Description",
     "quality": "Qualité",
+    "camping": {
+      "label": "Activités de Camping"
+    },
     "arcanum2": {
       "label": "Refonte de l'Arcaniste",
       "domain": "Domaine",

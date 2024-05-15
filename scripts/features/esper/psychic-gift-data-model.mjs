@@ -9,8 +9,7 @@ export class PsychicGiftDataModel extends projectfu.ClassFeatureDataModel {
         const {StringField, HTMLField} = foundry.data.fields
         return {
             trigger: new StringField(),
-            description: new HTMLField,
-
+            description: new HTMLField(),
         }
     }
 

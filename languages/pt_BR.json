@@ -2,6 +2,9 @@
   "FU-PT": {
     "description": "Descrição",
     "quality": "Qualidade",
+    "camping": {
+      "label": "Atividades de Acampamento"
+    },
     "arcanum2": {
       "label": "Rework dos Arcanums",
       "domain": "Domínio",
