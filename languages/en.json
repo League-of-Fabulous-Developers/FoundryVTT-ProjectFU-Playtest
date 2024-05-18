@@ -29,7 +29,7 @@
       "frame": "Frame",
       "passengers": "Passengers",
       "distanceMultiplier": "Travel Distance Multiplier",
-      "activeModules": "Active Modules",
+      "activeModules": "Enabled Modules",
       "embark": "Embark",
       "disembark": "Disembark",
       "moduleSlots": "Module Slots"
