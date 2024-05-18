@@ -23,7 +23,7 @@
     "vehicle": {
       "label": "Vehicle",
       "frameExoskeleton": "Exoskeleton",
-      "frameMech": "Mech",
+      "frameMech": "Mecha",
       "frameSteed": "Steed",
       "config": "Configuration",
       "frame": "Frame",
