@@ -1,0 +1,19 @@
+<div>
+    <h1>{{localize 'FU-PT.migration.app.title'}}</h1>
+    <p>{{localize 'FU-PT.migration.app.explanation'}}</p>
+    <hr>
+    <p>{{localize 'FU-PT.migration.app.affectedFeatures'}}:</p>
+    <ul>
+        {{#each affectedFeatures}}
+            <li>{{localize this}}</li>
+        {{/each}}
+    </ul>
+    <h2 data-migration>{{localize 'FU-PT.migration.app.startMigration'}}</h2>
+    <footer class="flexrow" data-buttons>
+        <button type="button" data-action="cancel">{{localize 'Cancel'}}</button>
+        <button type="button" data-action="migrate">{{localize 'Yes'}}</button>
+    </footer>
+    <footer class="flexrow">
+        <progress data-progress max="1" value="0"></progress>
+    </footer>
+</div>

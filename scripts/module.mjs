@@ -15,7 +15,10 @@ import {IngredientDataModel} from "./features/gourmet/ingredient-data-model.mjs"
 import {CookbookDataModel} from "./features/gourmet/cookbook-data-model.mjs";
 import {GameWellspringManager} from "./features/invoker/game-wellspring-manager.mjs";
 import {InvocationsDataModel} from "./features/invoker/invocations-data-model.mjs";
-import {ActorWellspringManager} from "./features/invoker/actor-wellspring-manager.mjs";
+import {EsperMigration} from "./features/esper/esper-migration.mjs";
+import {MutantMigration} from "./features/mutant/mutant-migration.mjs";
+import {PilotMigration} from "./features/pilot/pilot-migration.mjs";
+import {MigrationApplication} from "./migration.mjs";
 
 export const registeredFeatures = {}
 
@@ -29,7 +32,7 @@ Hooks.once('init', async function () {
     console.log(LOG_MESSAGE, "Registering class features")
     const templates = {}
 
-    if (game.settings.get(SYSTEM, SYSTEMSETTINGS.optionCampingRules)) {    
+    if (game.settings.get(SYSTEM, SYSTEMSETTINGS.optionCampingRules)) {
         registeredFeatures.camping = CONFIG.FU.optionalFeatureRegistry.register(MODULE, "camping", CampingActivityDataModel)
 
         Object.assign(templates, {
@@ -37,7 +40,7 @@ Hooks.once('init', async function () {
             "projectfu-playtest.camping.preview": "modules/projectfu-playtest/templates/camping/camping-preview.hbs",
         })
     }
-    
+
     if (game.settings.get(MODULE, SETTINGS.classes.arcanist2)) {
         registeredFeatures.arcanum2 = CONFIG.FU.classFeatureRegistry.register(MODULE, "arcanum2", Arcanum2DataModel)
 
@@ -157,5 +160,20 @@ Hooks.once("ready", async function () {
 
         ChatMessage.create(message);
         game.settings.set(MODULE, SETTINGS.welcomeMessage, false);
+    }
+})
+
+Hooks.once("setup", function () {
+    if (game.user.isGM) {
+        const systemFeatures = CONFIG.FU.classFeatures;
+        const moduleFeatures = registeredFeatures;
+
+        const migrations = [EsperMigration, MutantMigration, PilotMigration]
+            .map(migration => new migration(systemFeatures, moduleFeatures))
+            .filter(migration => migration.canRun());
+
+        if (migrations.length) {
+            new MigrationApplication(migrations);
+        }
     }
 })

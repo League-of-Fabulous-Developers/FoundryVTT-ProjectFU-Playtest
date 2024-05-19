@@ -14,6 +14,14 @@ const activeArmor = "vehicle.armor"
 
 const activeSupports = "vehicle.support"
 
+export const VEHICLE_FLAGS = {
+    activeVehicle,
+    vehicleEmbarked,
+    activeWeapons,
+    activeArmor,
+    activeSupports
+}
+
 /**
  * Management component to keep track of a characters active vehicle and modules.
  */

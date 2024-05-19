@@ -1,5 +1,5 @@
 import {MODULE} from "./constants.mjs";
-import { SETTINGS as SystemSettings } from "../../../systems/projectfu/module/settings.js";
+import {SETTINGS as SystemSettings} from "../../../systems/projectfu/module/settings.js";
 
 // Export the system settings directly
 export const SYSTEMSETTINGS = SystemSettings;
@@ -44,7 +44,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.esper.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.esper.hint"),
         scope: "world",
-        config: true,
+        config: !CONFIG.FU.classFeatures.psychicGift,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -54,7 +54,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.mutant.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.mutant.hint"),
         scope: "world",
-        config: true,
+        config: !CONFIG.FU.classFeatures.therioform,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -64,7 +64,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.pilot.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.pilot.hint"),
         scope: "world",
-        config: true,
+        config: !["vehicle", "armorModule", "weaponModule", "supportModule"].every(feature => CONFIG.FU.classFeatures[feature]),
         requiresReload: true,
         type: Boolean,
         default: false
