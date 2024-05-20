@@ -206,6 +206,8 @@
         "title": "Class Feature Migration",
         "explanation": "The supplements containing one or more of your enabled class features have been released internationally. The affected class features have been moved to the base ProjectFU system, since they are not in playtest any more and widely available now. To minimize confusion we ask you to migrate your affected class features. We don't expect you to suffer data loss during migration but the longer you postpone the migration the more likely it is. Once the migration is complete the affected class features will be automatically disabled and the page will reload.",
         "affectedFeatures": "The following features will be migrated",
+        "affectedCompendiums": "Items or Actors in the following compendium packs will be affected by the migration",
+        "compendiumsWarning": "Compendium packs need to be unlocked for migrations to work. Please unlock all affected compendium packs before starting the migration process.",
         "startMigration": "Start migration?",
         "migrationInProgress": "Migration in Progress"
       }
