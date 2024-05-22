@@ -1,20 +1,24 @@
+import {CampingActivityDataModel} from "./features/camping/camping-data-model.mjs";
 import {Arcanum2DataModel} from "./features/arcanist2/arcanum2-data-model.mjs";
 import {PsychicGiftDataModel} from "./features/esper/psychic-gift-data-model.mjs";
 import {TherioformDataModel} from "./features/mutant/therioform-data-model.mjs";
 import {ArmorModuleDataModel} from "./features/pilot/armor-module-data-model.mjs";
 import {WeaponModuleDataModel} from "./features/pilot/weapon-module-data-model.mjs";
 import {VehicleDataModel} from "./features/pilot/vehicle-data-model.mjs";
-import {LOG_MESSAGE, MODULE} from "./constants.mjs";
+import {LOG_MESSAGE, MODULE, SYSTEM} from "./constants.mjs";
 import {VehicleManager} from "./features/pilot/vehicle-manager.mjs";
 import {SupportModuleDataModel} from "./features/pilot/support-module-data-model.mjs";
-import {registerClassSettings, registerModuleSettings, SETTINGS} from "./settings.mjs";
+import {registerClassSettings, registerModuleSettings, SETTINGS, SYSTEMSETTINGS} from "./settings.mjs";
 import {MagiseedDataModel} from "./features/floralist/magiseed-data-model.mjs";
 import {GardenManager} from "./features/floralist/garden-manager.mjs";
 import {IngredientDataModel} from "./features/gourmet/ingredient-data-model.mjs";
 import {CookbookDataModel} from "./features/gourmet/cookbook-data-model.mjs";
 import {GameWellspringManager} from "./features/invoker/game-wellspring-manager.mjs";
 import {InvocationsDataModel} from "./features/invoker/invocations-data-model.mjs";
-import {ActorWellspringManager} from "./features/invoker/actor-wellspring-manager.mjs";
+import {EsperMigration} from "./features/esper/esper-migration.mjs";
+import {MutantMigration} from "./features/mutant/mutant-migration.mjs";
+import {PilotMigration} from "./features/pilot/pilot-migration.mjs";
+import {MigrationApplication} from "./migration.mjs";
 
 export const registeredFeatures = {}
 
@@ -27,6 +31,15 @@ Hooks.once('init', async function () {
 
     console.log(LOG_MESSAGE, "Registering class features")
     const templates = {}
+
+    if (game.settings.get(SYSTEM, SYSTEMSETTINGS.optionCampingRules)) {
+        registeredFeatures.camping = CONFIG.FU.optionalFeatureRegistry.register(MODULE, "camping", CampingActivityDataModel)
+
+        Object.assign(templates, {
+            "projectfu-playtest.camping.sheet": "modules/projectfu-playtest/templates/camping/camping-sheet.hbs",
+            "projectfu-playtest.camping.preview": "modules/projectfu-playtest/templates/camping/camping-preview.hbs",
+        })
+    }
 
     if (game.settings.get(MODULE, SETTINGS.classes.arcanist2)) {
         registeredFeatures.arcanum2 = CONFIG.FU.classFeatureRegistry.register(MODULE, "arcanum2", Arcanum2DataModel)
@@ -101,8 +114,6 @@ Hooks.once('init', async function () {
 
     if (game.settings.get(MODULE, SETTINGS.classes.invoker)) {
         GameWellspringManager.registerSettings();
-        Hooks.on("getSceneControlButtons", GameWellspringManager.onGetSceneControlButton)
-        Hooks.on("projectfu.actor.dataPrepared", ActorWellspringManager.onActorPrepared)
 
         registeredFeatures.invocations = CONFIG.FU.classFeatureRegistry.register(MODULE, "invocations", InvocationsDataModel)
 
@@ -149,5 +160,20 @@ Hooks.once("ready", async function () {
 
         ChatMessage.create(message);
         game.settings.set(MODULE, SETTINGS.welcomeMessage, false);
+    }
+})
+
+Hooks.once("setup", function () {
+    if (game.user.isGM) {
+        const systemFeatures = CONFIG.FU.classFeatures;
+        const moduleFeatures = registeredFeatures;
+
+        const migrations = [EsperMigration, MutantMigration, PilotMigration]
+            .map(migration => new migration(systemFeatures, moduleFeatures))
+            .filter(migration => migration.canRun());
+
+        if (migrations.length) {
+            new MigrationApplication(migrations);
+        }
     }
 })

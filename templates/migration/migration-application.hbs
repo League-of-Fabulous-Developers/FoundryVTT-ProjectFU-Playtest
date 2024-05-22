@@ -1,0 +1,33 @@
+<div>
+    <h1>{{localize 'FU-PT.migration.app.title'}}</h1>
+    <p>{{localize 'FU-PT.migration.app.explanation'}}</p>
+    <hr>
+    <p>{{localize 'FU-PT.migration.app.affectedFeatures'}}:</p>
+    <ul>
+        {{#each affectedFeatures}}
+            <li>{{localize this}}</li>
+        {{/each}}
+    </ul>
+    {{#if affectedCompendiums}}
+        <p>{{localize 'FU-PT.migration.app.affectedCompendiums'}}:</p>
+        <ul>
+            {{#each affectedCompendiums}}
+                <li>
+                    <span><b>{{label}}</b></span>
+                    <span>[{{name}}]</span>
+                    <span>{{#if locked}}<i class="fa fa-lock"></i>{{else}}<i class="fa fa-lock-open"></i>{{/if}}</span>
+                </li>
+            {{/each}}
+        </ul>
+        <p><b>{{localize 'FU-PT.migration.app.compendiumsWarning'}}</b></p>
+    {{/if}}
+    <hr>
+    <h2 data-migration>{{localize 'FU-PT.migration.app.startMigration'}}</h2>
+    <footer class="flexrow" data-buttons>
+        <button type="button" data-action="cancel">{{localize 'Cancel'}}</button>
+        <button type="button" data-action="migrate">{{localize 'Yes'}}</button>
+    </footer>
+    <footer class="flexrow">
+        <progress data-progress max="1" value="0"></progress>
+    </footer>
+</div>

@@ -2,6 +2,9 @@
   "FU-PT": {
     "description": "Description",
     "quality": "Quality",
+    "camping": {
+      "label": "Camping Activity"
+    },
     "arcanum2": {
       "label": "Arcanum Rework",
       "domain": "Domain",
@@ -20,13 +23,13 @@
     "vehicle": {
       "label": "Vehicle",
       "frameExoskeleton": "Exoskeleton",
-      "frameMech": "Mech",
+      "frameMech": "Mecha",
       "frameSteed": "Steed",
       "config": "Configuration",
       "frame": "Frame",
       "passengers": "Passengers",
       "distanceMultiplier": "Travel Distance Multiplier",
-      "activeModules": "Active Modules",
+      "activeModules": "Enabled Modules",
       "embark": "Embark",
       "disembark": "Disembark",
       "moduleSlots": "Module Slots"
@@ -196,6 +199,17 @@
       },
       "dialog": {
         "title": "Choose Invocation"
+      }
+    },
+    "migration": {
+      "app": {
+        "title": "Class Feature Migration",
+        "explanation": "The supplements containing one or more of your enabled class features have been released internationally. The affected class features have been moved to the base ProjectFU system, since they are not in playtest any more and widely available now. To minimize confusion we ask you to migrate your affected class features. We don't expect you to suffer data loss during migration but the longer you postpone the migration the more likely it is. Once the migration is complete the affected class features will be automatically disabled and the page will reload.",
+        "affectedFeatures": "The following features will be migrated",
+        "affectedCompendiums": "Items or Actors in the following compendium packs will be affected by the migration",
+        "compendiumsWarning": "Compendium packs need to be unlocked for migrations to work. Please unlock all affected compendium packs before starting the migration process. Locked compendiums affected by these migrations *WILL* suffer data loss.",
+        "startMigration": "Start migration?",
+        "migrationInProgress": "Migration in Progress"
       }
     }
   }

@@ -1,5 +1,6 @@
 import {MODULE} from "../../constants.mjs";
 import {WELLSPRINGS} from "./invoker-constants.mjs";
+import {ActorWellspringManager} from "./actor-wellspring-manager.mjs";
 
 export const HOOK_WELLSPRING_CHANGED = "projectfu-playtest.wellspringChanged"
 
@@ -10,9 +11,24 @@ const FLAG_ACTIVE_WELLSPRINGS = "wellsprings"
  */
 const DEFAULT_WELLSPRINGS = Object.freeze(Object.keys(WELLSPRINGS).reduce((agg, val) => (agg[val] = false) || agg, {}))
 
-export class GameWellspringManager extends Application {
+Hooks.on(projectfu.SystemControls.HOOK_GET_SYSTEM_TOOLS, onGetSystemTools)
 
-    static #app
+let gameWellspringManager;
+function onGetSystemTools(tools) {
+    tools.push({
+        name: GameWellspringManager.name,
+        title: "FU-PT.invocations.wellspring.manager.title",
+        icon: "fas fa-earth-asia",
+        button: true,
+        visible: game.user.isGM,
+        onClick: () => (gameWellspringManager ??= new GameWellspringManager()).render(true)
+    })
+}
+
+
+Hooks.on("projectfu.actor.dataPrepared", ActorWellspringManager.onActorPrepared)
+
+export class GameWellspringManager extends Application {
 
     static registerSettings() {
         for (const [key, value] of Object.entries(WELLSPRINGS)) {
@@ -26,18 +42,6 @@ export class GameWellspringManager extends Application {
                 onChange: newValue => Hooks.callAll(HOOK_WELLSPRING_CHANGED, [newValue, key])
             })
         }
-    }
-
-    static onGetSceneControlButton(controls) {
-        const tokenControl = controls.find(control => control.name === "token");
-        tokenControl.tools.push({
-            name: GameWellspringManager.name,
-            title: "FU-PT.invocations.wellspring.manager.title",
-            icon: "fas fa-earth-asia",
-            button: true,
-            visible: game.user.isGM,
-            onClick: () => (GameWellspringManager.#app ??= new GameWellspringManager()).render(true)
-        })
     }
 
     static get defaultOptions() {
