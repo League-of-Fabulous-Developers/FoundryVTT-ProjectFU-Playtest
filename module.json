@@ -5,7 +5,7 @@
   "version": "#{VERSION}#",
   "library": "false",
   "compatibility": {
-    "minimum": 10,
+    "minimum": 11,
     "verified": 11,
     "maximum": 12
   },
@@ -22,7 +22,6 @@
         "type": "system",
         "manifest": "https://github.com/League-of-Fabulous-Developers/FoundryVTT-Fabula-Ultima/releases/latest/download/system.json",
         "compatibility": {
-          "minimum": "2.3.0",
           "verified": "2.3.0"
         }
       }
