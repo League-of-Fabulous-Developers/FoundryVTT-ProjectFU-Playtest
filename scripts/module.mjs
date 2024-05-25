@@ -113,7 +113,7 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.invoker)) {
-        GameWellspringManager.registerSettings();
+        GameWellspringManager.initialize();
 
         registeredFeatures.invocations = CONFIG.FU.classFeatureRegistry.register(MODULE, "invocations", InvocationsDataModel)
 

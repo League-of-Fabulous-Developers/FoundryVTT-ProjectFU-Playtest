@@ -11,9 +11,11 @@ const FLAG_ACTIVE_WELLSPRINGS = "wellsprings"
  */
 const DEFAULT_WELLSPRINGS = Object.freeze(Object.keys(WELLSPRINGS).reduce((agg, val) => (agg[val] = false) || agg, {}))
 
-Hooks.on(projectfu.SystemControls.HOOK_GET_SYSTEM_TOOLS, onGetSystemTools)
 
 let gameWellspringManager;
+
+const renderApp = () => (gameWellspringManager ??= new GameWellspringManager()).render(true);
+
 function onGetSystemTools(tools) {
     tools.push({
         name: GameWellspringManager.name,
@@ -21,14 +23,29 @@ function onGetSystemTools(tools) {
         icon: "fas fa-earth-asia",
         button: true,
         visible: game.user.isGM,
-        onClick: () => (gameWellspringManager ??= new GameWellspringManager()).render(true)
+        onClick: renderApp
     })
 }
 
-
-Hooks.on("projectfu.actor.dataPrepared", ActorWellspringManager.onActorPrepared)
+const regExp = /^\/(ws|wellsprings?)$/i;
+function onChatMessage(chatLog, message, data) {
+    if (game.user.isGM && regExp.test(message)) {
+        renderApp();
+        return false;
+    }
+}
 
 export class GameWellspringManager extends Application {
+
+    static initialize(){
+        this.registerSettings();
+
+        Hooks.on(projectfu.SystemControls.HOOK_GET_SYSTEM_TOOLS, onGetSystemTools)
+
+        Hooks.on("projectfu.actor.dataPrepared", ActorWellspringManager.onActorPrepared)
+
+        Hooks.on("chatMessage", onChatMessage)
+    }
 
     static registerSettings() {
         for (const [key, value] of Object.entries(WELLSPRINGS)) {
