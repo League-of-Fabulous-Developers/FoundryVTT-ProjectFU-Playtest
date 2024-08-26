@@ -1,9 +1,11 @@
-<div class="invocation-message">
-    <header>
-        <i class="invocation-icon {{icon}}"></i>
-        <p class="invocation-name">{{name}}</p>
-    </header>
-    <div class='chat-desc'>
+<header class="title-desc chat-header flexrow invocation-message">
+    <i class="invocation-icon {{icon}} flexshrink"></i>
+    <h2 class="flexlarge">{{name}}</h2>
+</header>
+<div>
+<div class='chat-desc'>
+    {{#if description}}
         {{{description}}}
+    {{/if}}
     </div>
 </div>

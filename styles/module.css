@@ -179,6 +179,7 @@
     filter: grayscale(100%);
     font-size: 2rem;
     font-style: normal;
+    -webkit-text-stroke: 1px black;
 }
 
 .invocations-sheet fieldset, .invocations-selection fieldset {
@@ -230,5 +231,7 @@
     border: 0;
     filter: drop-shadow(2px 2px 4px #000000);
     width: 48px;
-    height: 48px;
+    height: auto;
+    font-style: normal;
+    -webkit-text-stroke: 1px black;
 }
