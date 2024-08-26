@@ -39,6 +39,10 @@ export class IngredientDataModel extends projectfu.ClassFeatureDataModel {
         return "projectfu-playtest.ingredient.sheet"
     }
 
+    static get previewTemplate() {
+		return "projectfu-playtest.ingredient.preview";
+	}
+
     static get translation() {
         return "FU-PT.ingredient.label"
     }

@@ -51,7 +51,7 @@
     color: #ffffff;
     font-size: 17px;
     text-shadow: 1px 1px 1px #000000;
-    box-shadow: 3px 6px #2b4a42;
+    box-shadow: 2px 4px #2b4a42;
     border-radius: 8px;
     background-color: #2b4a42;
     background-image: linear-gradient(to bottom, #2c584d, #a0cdbc);
@@ -85,8 +85,10 @@
 
 .cooking-app .action-button {
     border: unset;
-    text-align: center;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
 }
 
 .cooking-message .ingredients-list, .cooking-message .effect-list {
@@ -116,6 +118,7 @@
 }
 
 .cooking-message fieldset legend {
+    margin: 0 auto;
     width: 60%;
     border-radius: 8px;
     background: #2b4a42;
@@ -130,6 +133,17 @@
 
 .fupt-waves {
     background-image: url("/modules/projectfu-playtest/styles/assets/waves.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0px 8px 8px -6px;
+    width: 2rem; 
+    height: auto;
+}
+
+.ra-water-drop {
+    color: cornflowerblue;
+    font-size: 1.75rem !important;
 }
 
 .wellspring-manager-app .window-content > *, .invocations-selection-app .window-content > * {
@@ -148,6 +162,9 @@
     aspect-ratio: 1;
     background-size: cover;
     background-repeat: no-repeat;
+    font-size: 2rem;
+    font-style: normal;
+    -webkit-text-stroke: 1px black;
 }
 
 .wellspring-preview {
@@ -160,6 +177,8 @@
 
 .wellspring-manager-app .wellspring.inactive, .wellspring-preview .wellspring.inactive {
     filter: grayscale(100%);
+    font-size: 2rem;
+    font-style: normal;
 }
 
 .invocations-sheet fieldset, .invocations-selection fieldset {

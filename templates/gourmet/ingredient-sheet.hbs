@@ -5,8 +5,16 @@
         </legend>
         <div class="flexrow flex-group-center">
             <label class="resource-label-m">
+                {{localize 'FU.Cost'}}
+                <input type="number" name="system.cost.value" value="{{ system.cost.value }}" class="resource-inputs select-dropdown-l resource-text-m" />
+            </label>
+            <label class="resource-label-m">
+                {{localize 'FU.Quantity'}}
+                <input type="number" name="system.quantity.value" value="{{ system.quantity.value }}" class="resource-inputs select-dropdown-l resource-text-m" />
+            </label>
+            <label class="resource-label-m">
                 {{localize 'FU-PT.ingredient.taste.label'}}
-                <select name="system.data.taste" class="resource-inputs select-dropdown-l">
+                <select name="system.data.taste" class="resource-inputs select-dropdown-l resource-text-m">
                     {{selectOptions additionalData.tastes selected=system.data.taste localize=true}}
                 </select>
             </label>

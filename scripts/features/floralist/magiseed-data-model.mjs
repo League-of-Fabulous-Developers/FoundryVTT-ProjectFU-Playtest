@@ -18,9 +18,22 @@ export class MagiseedDataModel extends projectfu.RollableClassFeatureDataModel {
         return "projectfu-playtest.magiseed.sheet"
     }
 
+	static get expandTemplate() {
+		return 'projectfu-playtest.magiseed.description';
+	}
+
     static get translation() {
         return "FU-PT.magiseed.label"
     }
+
+    static async getAdditionalData(model) {
+		// Provide any additional data needed for the template rendering
+		return {
+			enrichedEffect1: await TextEditor.enrichHTML(model.effect1),
+			enrichedEffect2: await TextEditor.enrichHTML(model.effect2),
+			enrichedEffect3: await TextEditor.enrichHTML(model.effect3),
+		};
+	}
 
     static getTabConfigurations() {
         return [

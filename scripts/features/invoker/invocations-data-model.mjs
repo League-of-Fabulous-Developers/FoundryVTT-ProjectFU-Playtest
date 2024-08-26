@@ -55,6 +55,10 @@ export class InvocationsDataModel extends projectfu.RollableClassFeatureDataMode
         return "projectfu-playtest.invocations.preview"
     }
 
+    static get expandTemplate() {
+		return 'projectfu-playtest.invocations.description';
+	}
+
     static get translation() {
         return "FU-PT.invocations.label"
     }

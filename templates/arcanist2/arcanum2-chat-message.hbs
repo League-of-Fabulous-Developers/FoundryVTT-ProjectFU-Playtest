@@ -1,0 +1,23 @@
+<div class="fu-tags">
+    <div class="fu-tag gap-5">
+        {{localize 'FU.ClassFeatureArcanumDomains'}}: {{domains}}
+    </div>
+</div>
+<div class='chat-desc'>
+    <details {{#unless collapseDescriptions}}open{{/unless}}>
+        <summary class="collapsible-description align-center">{{localize 'FU-PT.arcanum2.merge'}}</summary>
+        {{{merge}}}
+    </details>
+</div>
+<div class='chat-desc'>
+    <details {{#unless collapseDescriptions}}open{{/unless}}>
+        <summary class="collapsible-description align-center">{{localize 'FU-PT.arcanum2.pulse'}}</summary>
+        {{{pulse}}}
+    </details>
+</div>
+<div class='chat-desc'>
+    <details {{#unless collapseDescriptions}}open{{/unless}}>
+        <summary class="collapsible-description align-center">{{localize 'FU-PT.arcanum2.dismiss'}}</summary>
+        {{{dismiss}}}
+    </details>
+</div>

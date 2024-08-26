@@ -22,4 +22,10 @@ export class CampingActivityDataModel extends projectfu.OptionalFeatureDataModel
 	static get translation() {
 		return 'FU-PT.camping.label';
 	}
+
+	static async getAdditionalData(model) {
+		return {
+			enrichedDescription: await TextEditor.enrichHTML(model.description),
+		};
+	}
 }

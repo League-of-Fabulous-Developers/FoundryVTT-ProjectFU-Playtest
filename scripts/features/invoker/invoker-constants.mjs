@@ -44,6 +44,6 @@ export const WELLSPRINGS = {
         type: "ice",
         element: "FU-PT.invocations.wellspring.water.element",
         setting: "wellspring.water",
-        icon: "fupt-waves"
+        icon: "ra ra-water-drop "
     },
 }

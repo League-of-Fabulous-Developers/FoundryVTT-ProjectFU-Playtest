@@ -1,6 +1,6 @@
 <form>
     <div class="flexrow gap-05">
-        <section class="flex0">
+        <section class="flex0 mb">
             <fieldset class="desc title-fieldset resource-content">
                 <legend class="resource-label-m">
                     {{localize "FU-PT.cookbook.cooking.ingredients"}}
@@ -9,7 +9,7 @@
                     <div>
                         <label>
                             <span class="resource-label-sm">{{localize "FU-PT.ingredient.label"}} {{math @index "+" 1}}</span><br>
-                            <select name="ingredients.{{@index}}">
+                            <select class="resource-inputs select-dropdown-full grid-span-4" name="ingredients.{{@index}}">
                                 {{selectOptions (lookup @root.options @index) selected=this nameAttr="value"
                                                 labelAttr="label" blank="-"}}
                             </select>

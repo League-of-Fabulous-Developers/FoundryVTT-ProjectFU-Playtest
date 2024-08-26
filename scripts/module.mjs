@@ -47,6 +47,7 @@ Hooks.once('init', async function () {
         Object.assign(templates, {
             "projectfu-playtest.arcanum2.sheet": "modules/projectfu-playtest/templates/arcanist2/arcanum2-sheet.hbs",
             "projectfu-playtest.arcanum2.preview": "modules/projectfu-playtest/templates/arcanist2/arcanum2-preview.hbs",
+            "projectfu-playtest.arcanum2.description": "modules/projectfu-playtest/templates/arcanist2/arcanum2-description.hbs",
         })
     }
 
@@ -98,7 +99,8 @@ Hooks.once('init', async function () {
         Hooks.on("renderFUItemSheet", GardenManager.onRenderFUItemSheet)
 
         Object.assign(templates, {
-            "projectfu-playtest.magiseed.sheet": "modules/projectfu-playtest/templates/floralist/magiseed-sheet.hbs"
+            "projectfu-playtest.magiseed.sheet": "modules/projectfu-playtest/templates/floralist/magiseed-sheet.hbs",
+            "projectfu-playtest.magiseed.description": "modules/projectfu-playtest/templates/floralist/magiseed-description.hbs"
         })
     }
 
@@ -108,6 +110,7 @@ Hooks.once('init', async function () {
 
         Object.assign(templates, {
             "projectfu-playtest.ingredient.sheet": "modules/projectfu-playtest/templates/gourmet/ingredient-sheet.hbs",
+            "projectfu-playtest.ingredient.preview": "modules/projectfu-playtest/templates/gourmet/ingredient-preview.hbs",
             "projectfu-playtest.cookbook.sheet": "modules/projectfu-playtest/templates/gourmet/cookbook-sheet.hbs",
         })
     }
@@ -119,7 +122,8 @@ Hooks.once('init', async function () {
 
         Object.assign(templates, {
             "projectfu-playtest.invocations.sheet": "modules/projectfu-playtest/templates/invoker/invocations-sheet.hbs",
-            "projectfu-playtest.invocations.preview": "modules/projectfu-playtest/templates/invoker/invocations-preview.hbs"
+            "projectfu-playtest.invocations.preview": "modules/projectfu-playtest/templates/invoker/invocations-preview.hbs",
+            "projectfu-playtest.invocations.description": "modules/projectfu-playtest/templates/invoker/invocations-description.hbs"
         })
     }
 
