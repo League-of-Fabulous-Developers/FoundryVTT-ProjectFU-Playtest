@@ -100,6 +100,7 @@ Hooks.once('init', async function () {
 
         Object.assign(templates, {
             "projectfu-playtest.magiseed.sheet": "modules/projectfu-playtest/templates/floralist/magiseed-sheet.hbs",
+            "projectfu-playtest.magiseed.preview": "modules/projectfu-playtest/templates/floralist/magiseed-preview.hbs",
             "projectfu-playtest.magiseed.description": "modules/projectfu-playtest/templates/floralist/magiseed-description.hbs"
         })
     }

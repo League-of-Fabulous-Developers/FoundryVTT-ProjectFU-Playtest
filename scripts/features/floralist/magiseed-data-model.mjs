@@ -18,6 +18,10 @@ export class MagiseedDataModel extends projectfu.RollableClassFeatureDataModel {
         return "projectfu-playtest.magiseed.sheet"
     }
 
+    static get previewTemplate() {
+		return "projectfu-playtest.magiseed.preview";
+	}
+
 	static get expandTemplate() {
 		return 'projectfu-playtest.magiseed.description';
 	}

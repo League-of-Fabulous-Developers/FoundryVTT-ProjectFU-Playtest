@@ -1,4 +1,16 @@
-<div class="item-full start gap-2 resource-content">
-    <span><strong>{{localize 'FU.Quantity'}}: </strong></span>
-    <span class="description-effect">{{system.quantity.value}}</span>
+<div class="item-full start gap-5 resource-content">
+    <div>
+        <span><strong>{{localize 'FU.Cost'}}: </strong></span>
+        <span class="description-effect">{{system.cost.value}}</span>
+    </div>
+    <span>⬥</span>
+    <div>
+        <span><strong>{{localize 'FU.Quantity'}}: </strong></span>
+        <span class="description-effect">{{system.quantity.value}}</span>
+    </div>
+    <span>⬥</span>
+    <div>
+        <span><strong>{{localize 'FU-PT.ingredient.label'}}: </strong></span>
+        <span class="description-effect">{{localize (lookup additionalData.tastes system.data.taste)}}</span>
+    </div>
 </div>

@@ -4,7 +4,21 @@
         <a class='item tab-style' data-tab='effect2'>{{localize 'FU-PT.magiseed.effect2'}}</a>
         <a class='item tab-style' data-tab='effect3'>{{localize 'FU-PT.magiseed.effect3'}}</a>
     </nav>
-    <hr/>
+    <hr />
+    <div>
+        <fieldset class="title-fieldset desc resource-content">
+            <legend class="resource-label-full">
+                <label class="resource-label-m">{{localize 'FU-PT.magiseed.label'}}</label>
+            </legend>
+            <div class="flexrow flex-group-center">
+                <label class="resource-label-m">
+                    {{localize 'FU.Cost'}}
+                    <input type="number" name="system.cost.value" value="{{ system.cost.value }}"
+                        class="resource-inputs select-dropdown-l resource-text-m" />
+                </label>
+            </div>
+        </fieldset>
+    </div>
     <div class='magiseed-content'>
         <div class='tab' data-group='magiseedTabs' data-tab='effect1'>
             <label class='resource-label-m'>{{localize 'FU-PT.magiseed.effect1'}}</label>
