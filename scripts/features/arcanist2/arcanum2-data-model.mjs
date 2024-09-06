@@ -34,11 +34,18 @@ export class Arcanum2DataModel extends projectfu.RollableClassFeatureDataModel {
 	}
 
 	static async getAdditionalData(model) {
+		// Extract the ID from model.item
+		const itemId = model.item?._id;
+
+		// Get the current active arcanum ID
+		const actorArcanumId = model.actor?.system.equipped.arcanum || null;
+
 		// Provide any additional data needed for the template rendering
 		return {
 			enrichedMerge: await TextEditor.enrichHTML(model.merge),
 			enrichedPulse: await TextEditor.enrichHTML(model.pulse),
 			enrichedDismiss: await TextEditor.enrichHTML(model.dismiss),
+			active: itemId === actorArcanumId,
 		};
 	}
 
