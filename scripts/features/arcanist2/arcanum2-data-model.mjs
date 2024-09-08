@@ -71,4 +71,8 @@ export class Arcanum2DataModel extends projectfu.RollableClassFeatureDataModel {
 
 		ChatMessage.create(chatMessage);
 	}
+
+	transferEffects() {
+		return this.item?.isEquipped ?? false;
+	}
 }
