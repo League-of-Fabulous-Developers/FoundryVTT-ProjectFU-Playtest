@@ -49,7 +49,6 @@ export class CookingApplication extends FormApplication {
         cookbook.app = this;
     }
 
-
     get template() {
         return "modules/projectfu-playtest/templates/gourmet/cooking-application.hbs";
     }
@@ -57,7 +56,7 @@ export class CookingApplication extends FormApplication {
     async getData(options = {}) {
         /** @type {Record<string, FUItem>} */
         const ingredients = this.#cookbook.actor.itemTypes.classFeature
-            .filter(value => value.system.data instanceof IngredientDataModel)
+            .filter(value => value.system.data instanceof IngredientDataModel && value.system.quantity?.value > 0)
             .reduce((agg, val) => (agg[val.id] = val) && agg, {});
 
         const tastes = this.object.ingredients.map(value => ingredients[value])
@@ -90,17 +89,14 @@ export class CookingApplication extends FormApplication {
                 effect: await TextEditor.enrichHTML(value.effect)
             })));
 
-        const selectOptions = []
-        this.object.ingredients.forEach((value, index, array) => {
-            const alreadySelectedIngredients = array.toSpliced(index, 1);
-            const options = Object.keys(ingredients)
-                .filter(ingredientId => !alreadySelectedIngredients.includes(ingredientId))
-                .map(ingredientId => ({
-                    value: ingredientId,
-                    label: `${ingredients[ingredientId].name} (${game.i18n.localize(TASTES[ingredients[ingredientId].system.data.taste])})`
-                }))
-            selectOptions.push(options)
-        })
+        const usedIngredients = this.object.ingredients.reduce((acc, value, idx) => (acc[value] = (acc[value] ?? 0) + 1) && acc, {});
+        const selectOptions = this.object.ingredients.map(value => Object.entries(ingredients)
+            .filter(([id, item]) => (value === id) || (item.system.quantity?.value ?? 0) - (usedIngredients[id] ?? 0) > 0)
+            .map(([id, item]) => ({
+                value: id,
+                label: `${item.name} (${game.i18n.localize(TASTES[item.system.data.taste])})`
+            }))
+        );
 
         return {
             recipe: this.object,
@@ -132,7 +128,15 @@ export class CookingApplication extends FormApplication {
          */
         const actor = this.#cookbook.actor;
 
-        updates.push(Item.deleteDocuments(renderData.ingredients.map(item => item.id), {parent: actor}))
+        // Decrement quantity of ingredients
+        const usedIngredients = renderData.ingredients.reduce((acc, value, idx) => (acc[value.id] = (acc[value.id] ?? 0) + 1) && acc, {});
+        const ingredientUpdates = Object.keys(usedIngredients).map(id => {
+            return {
+                _id: id,
+                "system.quantity.value": Math.max((data.ingredients[id].system.quantity?.value ?? 0) - (usedIngredients[id]), 0)
+            }
+        });
+        updates.push(actor.updateEmbeddedDocuments("Item", ingredientUpdates));
 
         /**
          * @type ChatMessageData
