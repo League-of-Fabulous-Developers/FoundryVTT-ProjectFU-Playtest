@@ -107,7 +107,7 @@ export class Migration {
             migrations.push(...items.map(item => () => {
                 let source = item.system.data._source
                 if (typeof feature.migrateSource === "function") {
-                    source = feature.migrateSource(source)
+                    source = feature.migrateSource(source, item)
                 }
                 return item.update({"system.featureType": feature.system, "system.data": source }, {noHook: true});
             }));
@@ -129,7 +129,7 @@ export class Migration {
      * @property {string} module
      * @property {string} system
      * @property {typeof ClassFeatureDataModel} implementation
-     * @property {(Object) => Object} migrateSource
+     * @property {(source: Object, item: Item) => Object} migrateSource
      */
     /**
      * @return AffectedClassFeature[]
