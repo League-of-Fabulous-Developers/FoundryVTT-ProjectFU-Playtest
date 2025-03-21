@@ -19,6 +19,7 @@ import {EsperMigration} from "./features/esper/esper-migration.mjs";
 import {MutantMigration} from "./features/mutant/mutant-migration.mjs";
 import {PilotMigration} from "./features/pilot/pilot-migration.mjs";
 import {MigrationApplication} from "./migration.mjs";
+import {FloralistMigration} from "./features/floralist/floralist-migration.mjs";
 
 export const registeredFeatures = {}
 
@@ -173,7 +174,7 @@ Hooks.once("setup", function () {
         const systemFeatures = CONFIG.FU.classFeatures;
         const moduleFeatures = registeredFeatures;
 
-        const migrations = [EsperMigration, MutantMigration, PilotMigration]
+        const migrations = [EsperMigration, MutantMigration, PilotMigration, FloralistMigration]
             .map(migration => new migration(systemFeatures, moduleFeatures))
             .filter(migration => migration.canRun());
 

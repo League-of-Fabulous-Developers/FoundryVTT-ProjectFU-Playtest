@@ -65,6 +65,7 @@ export class Migration {
          */
         const migrations = []
         for (let feature of this.affectedFeatures) {
+            /** @type Item[] */
             const items = game.items.search({
                 filters: [
                     {field: "type", value: "classFeature"},
@@ -103,7 +104,13 @@ export class Migration {
                 }
             }
 
-            migrations.push(...items.map(item => () => item.update({"system.featureType": feature.system}, {noHook: true})));
+            migrations.push(...items.map(item => () => {
+                let source = item.system.data._source
+                if (typeof feature.migrateSource === "function") {
+                    source = feature.migrateSource(source)
+                }
+                return item.update({"system.featureType": feature.system, "system.data": source }, {noHook: true});
+            }));
         }
         migrations.push(...this.additionalMigrations())
         migrations.push(() => game.settings.set(MODULE, this.setting, false))
@@ -122,6 +129,7 @@ export class Migration {
      * @property {string} module
      * @property {string} system
      * @property {typeof ClassFeatureDataModel} implementation
+     * @property {(Object) => Object} migrateSource
      */
     /**
      * @return AffectedClassFeature[]
