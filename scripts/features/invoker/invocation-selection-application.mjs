@@ -32,7 +32,7 @@ export class InvocationSelectionApplication extends Application {
 
 
     async getData(options = {}) {
-        const cleanedWellsprings = Object.entries(this.#model.actor.wellspringManager.activeWellsprings)
+        const cleanedWellsprings = Object.entries(this.#model.actor.playtestWellspringManager.activeWellsprings)
             .filter(([, value]) => value)
             .reduce((agg, [key, value]) => (agg[key] = value) && agg, {})
 
@@ -65,7 +65,7 @@ export class InvocationSelectionApplication extends Application {
 
 
     render(force = false, options = {}) {
-        const activeWellsprings = Object.values(this.#model.actor.wellspringManager.activeWellsprings)
+        const activeWellsprings = Object.values(this.#model.actor.playtestWellspringManager.activeWellsprings)
             .filter(value => value)
             .length;
         return super.render(force, {width: InvocationSelectionApplication.defaultOptions.width * activeWellsprings, ...options});

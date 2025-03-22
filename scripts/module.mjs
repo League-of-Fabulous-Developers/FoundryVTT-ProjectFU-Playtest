@@ -21,6 +21,7 @@ import {PilotMigration} from "./features/pilot/pilot-migration.mjs";
 import {MigrationApplication} from "./migration.mjs";
 import {FloralistMigration} from "./features/floralist/floralist-migration.mjs";
 import {GourmetMigration} from "./features/gourmet/gourmet-migration.mjs";
+import {InvokerMigration} from "./features/invoker/invoker-migration.mjs";
 
 export const registeredFeatures = {}
 
@@ -33,6 +34,7 @@ Hooks.once('init', async function () {
 
     console.log(LOG_MESSAGE, "Registering class features")
     const templates = {}
+    const docRoot = $(":root")
 
     if (game.settings.get(SYSTEM, SYSTEMSETTINGS.optionCampingRules)) {
         registeredFeatures.camping = CONFIG.FU.optionalFeatureRegistry.register(MODULE, "camping", CampingActivityDataModel)
@@ -105,6 +107,8 @@ Hooks.once('init', async function () {
             "projectfu-playtest.magiseed.preview": "modules/projectfu-playtest/templates/floralist/magiseed-preview.hbs",
             "projectfu-playtest.magiseed.description": "modules/projectfu-playtest/templates/floralist/magiseed-description.hbs"
         })
+
+        docRoot.attr("data-fu-pt-floralist", "true")
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.gourmet)) {
@@ -116,6 +120,7 @@ Hooks.once('init', async function () {
             "projectfu-playtest.ingredient.preview": "modules/projectfu-playtest/templates/gourmet/ingredient-preview.hbs",
             "projectfu-playtest.cookbook.sheet": "modules/projectfu-playtest/templates/gourmet/cookbook-sheet.hbs",
         })
+        docRoot.attr("data-fu-pt-gourmet", "true")
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.invoker)) {
@@ -128,6 +133,7 @@ Hooks.once('init', async function () {
             "projectfu-playtest.invocations.preview": "modules/projectfu-playtest/templates/invoker/invocations-preview.hbs",
             "projectfu-playtest.invocations.description": "modules/projectfu-playtest/templates/invoker/invocations-description.hbs"
         })
+        docRoot.attr("data-fu-pt-invoker", "true")
     }
 
     loadTemplates(templates)
@@ -171,11 +177,11 @@ Hooks.once("ready", async function () {
 })
 
 Hooks.once("setup", function () {
-    if (game.user.isGM) {
+    if (game.users.activeGM?.isSelf) {
         const systemFeatures = CONFIG.FU.classFeatures;
         const moduleFeatures = registeredFeatures;
 
-        const migrations = [EsperMigration, MutantMigration, PilotMigration, FloralistMigration, GourmetMigration]
+        const migrations = [EsperMigration, MutantMigration, PilotMigration, FloralistMigration, GourmetMigration, InvokerMigration]
             .map(migration => new migration(systemFeatures, moduleFeatures))
             .filter(migration => migration.canRun());
 

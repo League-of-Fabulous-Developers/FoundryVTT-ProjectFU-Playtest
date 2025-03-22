@@ -74,7 +74,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.floralist.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.floralist.hint"),
         scope: "world",
-        config: true,
+        config: !CONFIG.FU.classFeatures.magiseed,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -84,7 +84,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.gourmet.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.gourmet.hint"),
         scope: "world",
-        config: true,
+        config: !["ingredient", "cookbook"].every(feature => CONFIG.FU.classFeatures[feature]),
         requiresReload: true,
         type: Boolean,
         default: false
@@ -94,7 +94,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.invoker.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.invoker.hint"),
         scope: "world",
-        config: true,
+        config: !CONFIG.FU.classFeatures.invocations,
         requiresReload: true,
         type: Boolean,
         default: false

@@ -78,7 +78,7 @@ export class InvocationsDataModel extends projectfu.RollableClassFeatureDataMode
         return {
             levels: RANKS,
             wellsprings: WELLSPRINGS,
-            activeWellsprings: model.actor?.wellspringManager.activeWellsprings ?? {}
+            activeWellsprings: model.actor?.playtestWellspringManager.activeWellsprings ?? {}
         }
     }
 
@@ -87,7 +87,7 @@ export class InvocationsDataModel extends projectfu.RollableClassFeatureDataMode
         if (isShift) {
             this.#postDescription(model)
         } else {
-            const activeWellsprings = model.actor?.wellspringManager.activeWellsprings
+            const activeWellsprings = model.actor?.playtestWellspringManager.activeWellsprings
             if (!activeWellsprings) return;
             new InvocationSelectionApplication(model).render(true)
         }

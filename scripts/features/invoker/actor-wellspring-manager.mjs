@@ -2,7 +2,7 @@ import {GameWellspringManager, HOOK_WELLSPRING_CHANGED} from "./game-wellspring-
 import {MODULE} from "../../constants.mjs";
 
 
-const FLAG_INNER_WELLSPRING = "InnerWellspring"
+export const FLAG_INNER_WELLSPRING = "InnerWellspring"
 
 export class ActorWellspringManager {
 
@@ -18,7 +18,7 @@ export class ActorWellspringManager {
 
     static onActorPrepared(actor) {
         if (actor.type === "character") {
-            actor.wellspringManager ??= new ActorWellspringManager(actor)
+            actor.playtestWellspringManager ??= new ActorWellspringManager(actor)
         }
     }
 

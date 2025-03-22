@@ -5,7 +5,7 @@
     margin-bottom: .5em;
 }
 
-.vehicle-section,.associated-therioforms, .garden-section, .invocations-tabs {
+.vehicle-section, .associated-therioforms, .garden-section, .invocations-tabs {
     margin-bottom: 0.5em;
 }
 
@@ -27,211 +27,221 @@
     color: var(--color-level-error);
 }
 
-.chat-message .message-content .magiseed-effect {
-    padding: 0.5em;
+:root[data-fu-pt-floralist] {
+    .chat-message .message-content .magiseed-effect {
+        padding: 0.5em;
+    }
 }
 
-.cookbook-sheet {
+:root[data-fu-pt-gourmet] {
+    .cookbook-sheet {
+    }
+
+    .cookbook-sheet .title-fieldset {
+
+    }
+
+    .cookbook-sheet .taste-container {
+        gap: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .cookbook-sheet .taste > input[type=radio] {
+        display: none;
+    }
+
+    .cookbook-sheet .taste > input + * {
+        color: #ffffff;
+        font-size: 17px;
+        text-shadow: 1px 1px 1px #000000;
+        box-shadow: 2px 4px #2b4a42;
+        border-radius: 8px;
+        background-color: #2b4a42;
+        background-image: linear-gradient(to bottom, #2c584d, #a0cdbc);
+        word-wrap: break-word;
+        transition: -webkit-transform 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+        display: block;
+    }
+
+    .cookbook-sheet .taste > input:checked + * {
+        border: 1px solid darkslategrey;
+        border-radius: 8px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        transform: translateY(1px);
+    }
+
+    .cookbook-sheet .combination {
+        display: none;
+    }
+
+    .cookbook-sheet .combination.active {
+        display: revert;
+    }
+
+    .cooking-app .window-content > * {
+        margin: 0.5em;
+    }
+
+    .cooking-app .gap-05 {
+        gap: 0.5em;
+    }
+
+    .cooking-app .action-button {
+        border: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cooking-message .ingredients-list, .cooking-message .effect-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em
+    }
+
+    .cooking-message .ingredients-list .flexrow {
+        flex-direction: row;
+    }
+
+    .cooking-message .ingredients-list img {
+        height: var(--font-size-20);
+        width: var(--font-size-20);
+        border-radius: 4px;
+        background-image: linear-gradient(to right, #2b4a42, #3d665a);
+        margin-right: 0.5em;
+    }
+
+    .cooking-message .effect-list fieldset {
+        border: 1px solid #2b4a42;
+        border-radius: 0.5em;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        box-shadow: color-mix(in srgb, #2b4a42, transparent 50%) 2px 2px;
+    }
+
+    .cooking-message fieldset legend {
+        margin: 0 auto;
+        width: 60%;
+        border-radius: 8px;
+        background: #2b4a42;
+        color: #ffffff;
+        text-align: center;
+        padding: 0.125em 0.25em
+    }
+
+    .cooking-message fieldset.ingredients-list > legend, .cooking-message fieldset.effect-list > legend {
+        text-transform: uppercase;
+    }
 }
 
-.cookbook-sheet .title-fieldset {
+:root[data-fu-pt-invoker] {
+    .fupt-waves {
+        background-image: url("/modules/projectfu-playtest/styles/assets/waves.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0px 8px 8px -6px;
+        width: 2rem;
+        height: auto;
+    }
 
-}
+    .ra-water-drop {
+        color: cornflowerblue;
+        font-size: 1.75rem !important;
+    }
 
-.cookbook-sheet .taste-container {
-    gap: 0.5em;
-    margin-bottom: 0.5em;
-}
+    .wellspring-manager-app .window-content > *, .invocations-selection-app .window-content > * {
+        margin: 0.5em;
+    }
 
-.cookbook-sheet .taste > input[type=radio] {
-    display: none;
-}
+    .wellspring-manager-app .wellsprings {
+        padding: 0.5em;
+    }
 
-.cookbook-sheet .taste > input + * {
-    color: #ffffff;
-    font-size: 17px;
-    text-shadow: 1px 1px 1px #000000;
-    box-shadow: 2px 4px #2b4a42;
-    border-radius: 8px;
-    background-color: #2b4a42;
-    background-image: linear-gradient(to bottom, #2c584d, #a0cdbc);
-    word-wrap: break-word;
-    transition: -webkit-transform 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
-    display: block;
-}
+    .wellspring-manager-app .wellsprings > .flexrow {
+        gap: 0.5em;
+    }
 
-.cookbook-sheet .taste > input:checked + * {
-    border: 1px solid darkslategrey;
-    border-radius: 8px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    transform: translateY(1px);
-}
+    .wellspring-manager-app .wellspring, .wellspring-preview .wellspring {
+        aspect-ratio: 1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 2rem;
+        font-style: normal;
+        -webkit-text-stroke: 1px black;
+    }
 
-.cookbook-sheet .combination {
-    display: none;
-}
+    .wellspring-preview {
+        gap: 0.5em
+    }
 
-.cookbook-sheet .combination.active {
-    display: revert;
-}
+    .wellspring-preview .wellspring {
+        max-width: var(--font-size-28);
+    }
 
-.cooking-app .window-content > * {
-    margin: 0.5em;
-}
+    .wellspring-manager-app .wellspring.inactive, .wellspring-preview .wellspring.inactive {
+        filter: grayscale(100%);
+        font-size: 2rem;
+        font-style: normal;
+        -webkit-text-stroke: 1px black;
+    }
 
-.cooking-app .gap-05, .invocations-selection-app .gap-05 {
-    gap: 0.5em;
-}
+    .invocations-sheet fieldset, .invocations-selection fieldset {
+        padding: 0.5em;
+    }
 
-.cooking-app .action-button {
-    border: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
-}
+    .invocations-sheet fieldset fieldset, .invocations-selection fieldset fieldset {
+        box-shadow: color-mix(in srgb, #2b4a42, transparent 50%) 2px 2px;
+    }
 
-.cooking-message .ingredients-list, .cooking-message .effect-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25em
-}
+    .invocations-sheet .invocation-description .editor {
+        min-height: 10em;
+        max-height: 10em;
+    }
 
-.cooking-message .ingredients-list .flexrow {
-    flex-direction: row;
-}
+    .invocations-selection-app .gap-05 {
+        gap: 0.5em;
+    }
 
-.cooking-message .ingredients-list img {
-    height: var(--font-size-20);
-    width: var(--font-size-20);
-    border-radius: 4px;
-    background-image: linear-gradient(to right, #2b4a42, #3d665a);
-    margin-right: 0.5em;
-}
+    .invocations-selection .fun {
+        display: inline-block;
+    }
 
-.cooking-message .effect-list fieldset {
-    border: 1px solid #2b4a42;
-    border-radius: 0.5em;
-    padding: 0.5em;
-    margin-bottom: 0.5em;
-    box-shadow: color-mix(in srgb, #2b4a42, transparent 50%) 2px 2px;
-}
+    .invocation-message header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.cooking-message fieldset legend {
-    margin: 0 auto;
-    width: 60%;
-    border-radius: 8px;
-    background: #2b4a42;
-    color: #ffffff;
-    text-align: center;
-    padding: 0.125em 0.25em
-}
+    .invocation-message .invocation-name {
+        font-family: alice;
+        line-height: 1.2;
+        color: #ffffff;
+        font-size: 26px;
+        text-shadow: 2px 2px 4px #000000;
+        box-shadow: 3px 6px #2b4a42;
+        border-style: solid;
+        border-width: thin;
+        border-color: #f5f5dc;
+        padding: 10px;
+        border-radius: 12px;
+        background-color: #3d665a;
+        overflow-wrap: anywhere;
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
 
-.cooking-message fieldset.ingredients-list > legend, .cooking-message fieldset.effect-list > legend {
-    text-transform: uppercase;
-}
-
-.fupt-waves {
-    background-image: url("/modules/projectfu-playtest/styles/assets/waves.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0px 8px 8px -6px;
-    width: 2rem; 
-    height: auto;
-}
-
-.ra-water-drop {
-    color: cornflowerblue;
-    font-size: 1.75rem !important;
-}
-
-.wellspring-manager-app .window-content > *, .invocations-selection-app .window-content > * {
-    margin: 0.5em;
-}
-
-.wellspring-manager-app .wellsprings {
-    padding: 0.5em;
-}
-
-.wellspring-manager-app .wellsprings > .flexrow {
-    gap: 0.5em;
-}
-
-.wellspring-manager-app .wellspring, .wellspring-preview .wellspring {
-    aspect-ratio: 1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-size: 2rem;
-    font-style: normal;
-    -webkit-text-stroke: 1px black;
-}
-
-.wellspring-preview {
-    gap: 0.5em
-}
-
-.wellspring-preview .wellspring {
-    max-width: var(--font-size-28);
-}
-
-.wellspring-manager-app .wellspring.inactive, .wellspring-preview .wellspring.inactive {
-    filter: grayscale(100%);
-    font-size: 2rem;
-    font-style: normal;
-    -webkit-text-stroke: 1px black;
-}
-
-.invocations-sheet fieldset, .invocations-selection fieldset {
-    padding: 0.5em;
-}
-
-.invocations-sheet fieldset fieldset, .invocations-selection fieldset fieldset {
-    box-shadow: color-mix(in srgb, #2b4a42, transparent 50%) 2px 2px;
-}
-
-.invocations-sheet .invocation-description .editor {
-    min-height: 10em;
-    max-height: 10em;
-}
-
-.invocations-selection .fun {
-    display: inline-block;
-}
-
-.invocation-message header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.invocation-message .invocation-name {
-    font-family: alice;
-    line-height: 1.2;
-    color: #ffffff;
-    font-size: 26px;
-    text-shadow: 2px 2px 4px #000000;
-    box-shadow: 3px 6px #2b4a42;
-    border-style: solid;
-    border-width: thin;
-    border-color: #f5f5dc;
-    padding: 10px;
-    border-radius: 12px;
-    background-color: #3d665a;
-    overflow-wrap: anywhere;
-    margin: 10px 0;
-    text-align: center;
-    width: 100%;
-}
-
-.invocation-message .invocation-icon {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 0;
-    filter: drop-shadow(2px 2px 4px #000000);
-    width: 48px;
-    height: auto;
-    font-style: normal;
-    -webkit-text-stroke: 1px black;
+    .invocation-message .invocation-icon {
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 0;
+        filter: drop-shadow(2px 2px 4px #000000);
+        width: 48px;
+        height: auto;
+        font-style: normal;
+        -webkit-text-stroke: 1px black;
+    }
 }

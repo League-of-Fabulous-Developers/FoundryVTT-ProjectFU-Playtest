@@ -1,7 +1,7 @@
 import {MODULE} from "../../constants.mjs";
 import {IngredientDataModel, tasteComparator, TASTES} from "./ingredient-data-model.mjs";
 
-const ALL_YOU_CAN_EAT_FLAG = "AllYouCanEat"
+export const FLAG_ALL_YOU_CAN_EAT = "AllYouCanEat"
 
 /**
  * @typedef Recipe
@@ -42,7 +42,7 @@ export class CookingApplication extends FormApplication {
         if (cookbook.app) {
             return cookbook.app
         }
-        const maxIngredients = cookbook.actor.getFlag(MODULE, ALL_YOU_CAN_EAT_FLAG) ? 4 : 3;
+        const maxIngredients = cookbook.actor.getFlag(MODULE, FLAG_ALL_YOU_CAN_EAT) ? 4 : 3;
         super({ingredients: Array(maxIngredients).fill("")});
         this.#cookbook = cookbook;
         this.#maxIngredients = maxIngredients

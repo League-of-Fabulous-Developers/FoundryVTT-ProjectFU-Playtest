@@ -4,7 +4,7 @@ import {ActorWellspringManager} from "./actor-wellspring-manager.mjs";
 
 export const HOOK_WELLSPRING_CHANGED = "projectfu-playtest.wellspringChanged"
 
-const FLAG_ACTIVE_WELLSPRINGS = "wellsprings"
+export const FLAG_ACTIVE_WELLSPRINGS = "wellsprings"
 
 /**
  * @type {Readonly<Record<WellspringElement, false>>}
