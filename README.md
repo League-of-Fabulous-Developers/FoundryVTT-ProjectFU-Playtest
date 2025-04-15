@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Foundry-v11-informational)
+![](https://img.shields.io/badge/Foundry-v12-informational)
 <!--- Downloads @ Latest Badge -->
 <!--- replace <user>/<repo> with your username/repository -->
 <!--- ![Latest Release Download Count](https://img.shields.io/github/downloads/<user>/<repo>/latest/module.zip) -->
@@ -20,6 +20,14 @@ Module Manifest:\
 `https://github.com/League-of-Fabulous-Developers/ProjectFU-Playtest/releases/latest/download/module.json`
 
 ## Currently supported:
+
+### Arcana Rework
+* Arcanum Class Feature
+
+### Camp Activities
+* Camp Activity Optional Feature
+
+## Successfully Migrated to System:
 
 ### Esper
 * Psychic Gift class feature
