@@ -217,10 +217,19 @@ export class MigrationApplication extends Application {
 
         for (let migration of this.#migrations) {
             const migrationActions = await migration.getMigrations();
-            allMigrations.push(...migrationActions)
+            allMigrations.push(...migrationActions.filter(action => action && typeof action === 'function'))
         }
         progress.attr("max", allMigrations.length)
-        Promise.allSettled(allMigrations.map(value => value().then(updateProgress))).then(() => {
+        Promise.allSettled(allMigrations.map(async value => {
+            try {
+                const result = value();
+                if (result && typeof result.then === 'function') await result;
+                updateProgress();
+            } catch (error) {
+                console.error('Migration failed:', error);
+                updateProgress();
+            }
+        })).then(() => {
             this.close()
             game.socket.emit("reload");
             foundry.utils.debouncedReload();
