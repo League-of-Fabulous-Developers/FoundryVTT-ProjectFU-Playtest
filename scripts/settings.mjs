@@ -1,8 +1,4 @@
 import {MODULE} from "./constants.mjs";
-import {SETTINGS as SystemSettings} from "../../../systems/projectfu/module/settings.js";
-
-// Export the system settings directly
-export const SYSTEMSETTINGS = SystemSettings;
 
 export const SETTINGS = {
     welcomeMessage: "welcomeMessage",
@@ -14,6 +10,9 @@ export const SETTINGS = {
         floralist: "classes.floralist",
         gourmet: "classes.gourmet",
         invoker: "classes.invoker"
+    },
+    optionalFeatures: {
+        camping: "optionalFeatures.camping"
     }
 }
 
@@ -44,7 +43,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.esper.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.esper.hint"),
         scope: "world",
-        config: !CONFIG.FU.classFeatures.psychicGift,
+        config: true,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -54,7 +53,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.mutant.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.mutant.hint"),
         scope: "world",
-        config: !CONFIG.FU.classFeatures.therioform,
+        config: true,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -64,7 +63,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.pilot.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.pilot.hint"),
         scope: "world",
-        config: !["vehicle", "armorModule", "weaponModule", "supportModule"].every(feature => CONFIG.FU.classFeatures[feature]),
+        config: true,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -74,7 +73,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.floralist.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.floralist.hint"),
         scope: "world",
-        config: !CONFIG.FU.classFeatures.magiseed,
+        config: true,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -84,7 +83,7 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.gourmet.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.gourmet.hint"),
         scope: "world",
-        config: !["ingredient", "cookbook"].every(feature => CONFIG.FU.classFeatures[feature]),
+        config: true,
         requiresReload: true,
         type: Boolean,
         default: false
@@ -94,9 +93,55 @@ export function registerClassSettings() {
         name: game.i18n.localize("FU-PT.settings.classes.invoker.name"),
         hint: game.i18n.localize("FU-PT.settings.classes.invoker.hint"),
         scope: "world",
-        config: !CONFIG.FU.classFeatures.invocations,
+        config: true,
         requiresReload: true,
         type: Boolean,
         default: false
     })
+
+    Hooks.once("setup", () => {
+        const settings = {
+            [SETTINGS.classes.esper]: () => !CONFIG.FU.classFeatures.psychicGift,
+            [SETTINGS.classes.mutant]: () => !CONFIG.FU.classFeatures.therioform,
+            [SETTINGS.classes.pilot]: () => !["vehicle", "armorModule", "weaponModule", "supportModule"].every(feature => CONFIG.FU.classFeatures[feature]),
+            [SETTINGS.classes.floralist]: () => !CONFIG.FU.classFeatures.magiseed,
+            [SETTINGS.classes.gourmet]: () => !["ingredient", "cookbook"].every(feature => CONFIG.FU.classFeatures[feature]),
+            [SETTINGS.classes.invoker]: () => !CONFIG.FU.classFeatures.invocations
+        }
+
+        Object.entries(settings).forEach(([setting, checkConfigurable]) => {
+            const settingKey = game.settings.get(MODULE, setting, {document: true}).key;
+            const settingData = game.settings.settings.get(settingKey);
+            if (settingData) {
+                settingData.config = checkConfigurable()
+            }
+        })
+    })
+}
+
+export function registerOptionalFeaturesSettings() {
+    game.settings.register(MODULE, SETTINGS.optionalFeatures.camping, {
+        name: game.i18n.localize("FU-PT.settings.optionalFeatures.camping.name"),
+        hint: game.i18n.localize("FU-PT.settings.optionalFeatures.camping.hint"),
+        scope: "world",
+        config: !CONFIG.FU.optionalFeatures.campActivity,
+        requiresReload: true,
+        type: Boolean,
+        default: !!CONFIG.FU.optionalFeatures.campActivity
+    })
+
+    Hooks.once("setup", () => {
+        const settings = {
+            [SETTINGS.optionalFeatures.camping]: () => !CONFIG.FU.optionalFeatures.campActivity,
+        }
+
+        Object.entries(settings).forEach(([setting, checkConfigurable]) => {
+            const settingKey = game.settings.get(MODULE, setting, {document: true}).key;
+            const settingData = game.settings.settings.get(settingKey);
+            if (settingData) {
+                settingData.config = checkConfigurable()
+            }
+        })
+    })
+
 }

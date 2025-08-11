@@ -97,6 +97,12 @@
           "name": "Activate Invoker features",
           "hint": "Activates the 'Invocations' class feature type and the Wellspring manager."
         }
+      },
+      "optionalFeatures": {
+        "camping": {
+          "name": "Activate Camp Activities",
+          "hint": "Activates the 'Camp Activity' optional feature type."
+        }
       }
     },
     "welcomeMessage": {

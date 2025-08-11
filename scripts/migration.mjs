@@ -1,6 +1,6 @@
 import {MODULE} from "./constants.mjs";
 
-export class Migration {
+class BaseMigration {
 
     systemFeatures
     moduleFeatures
@@ -25,10 +25,10 @@ export class Migration {
 
         pack_loop: for (const pack of game.packs.contents) {
             if (pack.metadata.type === "Item") {
-                const classFeatures = await pack.getDocuments({type: "classFeature"});
-                for (let classFeature of classFeatures) {
+                const featureItems = await pack.getDocuments({type: this.affectedItemType});
+                for (let featureItem of featureItems) {
                     for (let affectedFeature of this.affectedFeatures) {
-                        if (classFeature.system.featureType === affectedFeature.module) {
+                        if (foundry.utils.getProperty(featureItem, this.featureTypeKey) === affectedFeature.module) {
                             packs.add(pack);
                             continue pack_loop;
                         }
@@ -38,9 +38,9 @@ export class Migration {
                 const actors = await pack.getDocuments();
                 for (const actor of actors) {
                     for (let item of actor._source.items) {
-                        if (item.type === "classFeature") {
+                        if (item.type === this.affectedItemType) {
                             for (let affectedFeature of this.affectedFeatures) {
-                                if (item.system.featureType === affectedFeature.module) {
+                                if (foundry.utils.getProperty(item, this.featureTypeKey) === affectedFeature.module) {
                                     packs.add(pack);
                                     continue pack_loop;
                                 }
@@ -68,14 +68,14 @@ export class Migration {
             /** @type Item[] */
             const items = game.items.search({
                 filters: [
-                    {field: "type", value: "classFeature"},
-                    {field: "system.featureType", value: feature.module}
+                    {field: "type", value: this.affectedItemType},
+                    {field: this.featureTypeKey, value: feature.module}
                 ]
             });
             game.actors.forEach(actor => {
-                actor.itemTypes.classFeature.forEach(classFeature => {
-                    if (classFeature.system.featureType === feature.module) {
-                        items.push(classFeature)
+                (actor.itemTypes[this.affectedItemType] ?? []).forEach(featureItem => {
+                    if (foundry.utils.getProperty(featureItem, this.featureTypeKey) === feature.module) {
+                        items.push(featureItem)
                     }
                 })
             });
@@ -83,18 +83,18 @@ export class Migration {
             for (let pack of [...(await this.scanPacks())]) {
                 if (!pack.locked) {
                     if (pack.metadata.type === "Item") {
-                        const classFeatures = await pack.getDocuments({type: "classFeature"});
-                        for (let classFeature of classFeatures) {
-                            if (classFeature.system.featureType === feature.module) {
-                                items.push(classFeature)
+                        const featureItems = await pack.getDocuments({type: this.affectedItemType});
+                        for (let featureItem of featureItems) {
+                            if (foundry.utils.getProperty(featureItem, this.featureTypeKey) === feature.module) {
+                                items.push(featureItem)
                             }
                         }
                     } else if (pack.metadata.type === "Actor") {
                         const actors = await pack.getDocuments();
                         for (const actor of actors) {
                             for (let item of actor.items) {
-                                if (item.type === "classFeature") {
-                                    if (item.system.featureType === feature.module) {
+                                if (item.type === this.affectedItemType) {
+                                    if (foundry.utils.getProperty(item, this.featureTypeKey) === feature.module) {
                                         items.push(item);
                                     }
                                 }
@@ -109,7 +109,7 @@ export class Migration {
                 if (typeof feature.migrateSource === "function") {
                     source = feature.migrateSource(source, item)
                 }
-                return item.update({"system.featureType": feature.system, "system.data": source }, {noHook: true});
+                return item.update({[this.featureTypeKey]: feature.system, "system.data": source}, {noHook: true});
             }));
         }
         migrations.push(...this.additionalMigrations())
@@ -122,6 +122,22 @@ export class Migration {
      */
     additionalMigrations() {
         return []
+    }
+
+    /**
+     * Defines the item type affected by this migration.
+     * @return string
+     */
+    get affectedItemType() {
+        throw new Error("Migrations must override the 'affectedItemType' getter.");
+    }
+
+    /**
+     * Defines under which key the feature type data is stored in the item.
+     * @return string
+     */
+    get featureTypeKey() {
+        throw new Error("Migrations must override the 'featureTypeKey' getter.");
     }
 
     /**
@@ -146,6 +162,27 @@ export class Migration {
     }
 }
 
+export class Migration extends BaseMigration {
+
+    get affectedItemType() {
+        return "classFeature";
+    }
+
+    get featureTypeKey() {
+        return "system.featureType";
+    }
+}
+
+export class OptionalFeatureMigration extends BaseMigration {
+    get affectedItemType() {
+        return "optionalFeature";
+    }
+
+    get featureTypeKey() {
+        return "system.optionalType";
+    }
+}
+
 export class MigrationApplication extends Application {
 
     static get defaultOptions() {
@@ -156,7 +193,7 @@ export class MigrationApplication extends Application {
         })
     }
 
-    /** @type Migration[] */
+    /** @type BaseMigration[] */
     #migrations
 
     #hook

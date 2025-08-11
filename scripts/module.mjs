@@ -5,10 +5,15 @@ import {TherioformDataModel} from "./features/mutant/therioform-data-model.mjs";
 import {ArmorModuleDataModel} from "./features/pilot/armor-module-data-model.mjs";
 import {WeaponModuleDataModel} from "./features/pilot/weapon-module-data-model.mjs";
 import {VehicleDataModel} from "./features/pilot/vehicle-data-model.mjs";
-import {LOG_MESSAGE, MODULE, SYSTEM} from "./constants.mjs";
+import {LOG_MESSAGE, MODULE} from "./constants.mjs";
 import {VehicleManager} from "./features/pilot/vehicle-manager.mjs";
 import {SupportModuleDataModel} from "./features/pilot/support-module-data-model.mjs";
-import {registerClassSettings, registerModuleSettings, SETTINGS, SYSTEMSETTINGS} from "./settings.mjs";
+import {
+    registerClassSettings,
+    registerModuleSettings,
+    registerOptionalFeaturesSettings,
+    SETTINGS
+} from "./settings.mjs";
 import {MagiseedDataModel} from "./features/floralist/magiseed-data-model.mjs";
 import {GardenManager} from "./features/floralist/garden-manager.mjs";
 import {IngredientDataModel} from "./features/gourmet/ingredient-data-model.mjs";
@@ -22,8 +27,10 @@ import {MigrationApplication} from "./migration.mjs";
 import {FloralistMigration} from "./features/floralist/floralist-migration.mjs";
 import {GourmetMigration} from "./features/gourmet/gourmet-migration.mjs";
 import {InvokerMigration} from "./features/invoker/invoker-migration.mjs";
+import {CampingActivityMigration} from "./features/camping/camping-activity-migration.mjs";
 
-export const registeredFeatures = {}
+export const registeredClassFeatures = {}
+export const registeredOptionalFeatures = {}
 
 Hooks.once('init', async function () {
     console.log(LOG_MESSAGE, "Initialization started")
@@ -31,13 +38,14 @@ Hooks.once('init', async function () {
     console.log(LOG_MESSAGE, "Registering settings")
     registerModuleSettings()
     registerClassSettings()
+    registerOptionalFeaturesSettings()
 
     console.log(LOG_MESSAGE, "Registering class features")
     const templates = {}
     const docRoot = $(":root")
 
-    if (game.settings.get(SYSTEM, SYSTEMSETTINGS.optionCampingRules)) {
-        registeredFeatures.camping = CONFIG.FU.optionalFeatureRegistry.register(MODULE, "camping", CampingActivityDataModel)
+    if (game.settings.get(MODULE, SETTINGS.optionalFeatures.camping)) {
+        registeredOptionalFeatures.camping = CONFIG.FU.optionalFeatureRegistry.register(MODULE, "camping", CampingActivityDataModel)
 
         Object.assign(templates, {
             "projectfu-playtest.camping.sheet": "modules/projectfu-playtest/templates/camping/camping-sheet.hbs",
@@ -46,7 +54,7 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.arcanist2)) {
-        registeredFeatures.arcanum2 = CONFIG.FU.classFeatureRegistry.register(MODULE, "arcanum2", Arcanum2DataModel)
+        registeredClassFeatures.arcanum2 = CONFIG.FU.classFeatureRegistry.register(MODULE, "arcanum2", Arcanum2DataModel)
 
         Object.assign(templates, {
             "projectfu-playtest.arcanum2.sheet": "modules/projectfu-playtest/templates/arcanist2/arcanum2-sheet.hbs",
@@ -56,7 +64,7 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.esper)) {
-        registeredFeatures.psychicGift = CONFIG.FU.classFeatureRegistry.register(MODULE, "psychicGift", PsychicGiftDataModel)
+        registeredClassFeatures.psychicGift = CONFIG.FU.classFeatureRegistry.register(MODULE, "psychicGift", PsychicGiftDataModel)
 
         Object.assign(templates, {
             "projectfu-playtest.psychicGift.sheet": "modules/projectfu-playtest/templates/esper/psychic-gift-sheet.hbs",
@@ -65,7 +73,7 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.mutant)) {
-        registeredFeatures.therioform = CONFIG.FU.classFeatureRegistry.register(MODULE, "therioform", TherioformDataModel)
+        registeredClassFeatures.therioform = CONFIG.FU.classFeatureRegistry.register(MODULE, "therioform", TherioformDataModel)
 
         Hooks.on("renderFUStandardActorSheet", TherioformDataModel.onRenderStandardFUActorSheet)
 
@@ -75,10 +83,10 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.pilot)) {
-        registeredFeatures.vehicle = CONFIG.FU.classFeatureRegistry.register(MODULE, "vehicle", VehicleDataModel)
-        registeredFeatures.armorModule = CONFIG.FU.classFeatureRegistry.register(MODULE, "armorModule", ArmorModuleDataModel)
-        registeredFeatures.weaponModule = CONFIG.FU.classFeatureRegistry.register(MODULE, "weaponModule", WeaponModuleDataModel)
-        registeredFeatures.supportModule = CONFIG.FU.classFeatureRegistry.register(MODULE, "supportModule", SupportModuleDataModel)
+        registeredClassFeatures.vehicle = CONFIG.FU.classFeatureRegistry.register(MODULE, "vehicle", VehicleDataModel)
+        registeredClassFeatures.armorModule = CONFIG.FU.classFeatureRegistry.register(MODULE, "armorModule", ArmorModuleDataModel)
+        registeredClassFeatures.weaponModule = CONFIG.FU.classFeatureRegistry.register(MODULE, "weaponModule", WeaponModuleDataModel)
+        registeredClassFeatures.supportModule = CONFIG.FU.classFeatureRegistry.register(MODULE, "supportModule", SupportModuleDataModel)
 
         Hooks.on("projectfu.actor.dataPrepared", VehicleManager.onActorPrepared)
         Hooks.on("renderFUStandardActorSheet", VehicleManager.onRenderStandardFUActorSheet)
@@ -96,7 +104,7 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.floralist)) {
-        registeredFeatures.magiseed = CONFIG.FU.classFeatureRegistry.register(MODULE, "magiseed", MagiseedDataModel)
+        registeredClassFeatures.magiseed = CONFIG.FU.classFeatureRegistry.register(MODULE, "magiseed", MagiseedDataModel)
 
         Hooks.on("projectfu.actor.dataPrepared", GardenManager.onActorPrepared)
         Hooks.on("renderFUStandardActorSheet", GardenManager.onRenderStandardFUActorSheet)
@@ -112,8 +120,8 @@ Hooks.once('init', async function () {
     }
 
     if (game.settings.get(MODULE, SETTINGS.classes.gourmet)) {
-        registeredFeatures.ingredient = CONFIG.FU.classFeatureRegistry.register(MODULE, "ingredient", IngredientDataModel)
-        registeredFeatures.cookbook = CONFIG.FU.classFeatureRegistry.register(MODULE, "cookbook", CookbookDataModel)
+        registeredClassFeatures.ingredient = CONFIG.FU.classFeatureRegistry.register(MODULE, "ingredient", IngredientDataModel)
+        registeredClassFeatures.cookbook = CONFIG.FU.classFeatureRegistry.register(MODULE, "cookbook", CookbookDataModel)
 
         Object.assign(templates, {
             "projectfu-playtest.ingredient.sheet": "modules/projectfu-playtest/templates/gourmet/ingredient-sheet.hbs",
@@ -126,7 +134,7 @@ Hooks.once('init', async function () {
     if (game.settings.get(MODULE, SETTINGS.classes.invoker)) {
         GameWellspringManager.initialize();
 
-        registeredFeatures.invocations = CONFIG.FU.classFeatureRegistry.register(MODULE, "invocations", InvocationsDataModel)
+        registeredClassFeatures.invocations = CONFIG.FU.classFeatureRegistry.register(MODULE, "invocations", InvocationsDataModel)
 
         Object.assign(templates, {
             "projectfu-playtest.invocations.sheet": "modules/projectfu-playtest/templates/invoker/invocations-sheet.hbs",
@@ -138,7 +146,7 @@ Hooks.once('init', async function () {
 
     loadTemplates(templates)
 
-    console.log(LOG_MESSAGE, "Class Features registered", registeredFeatures)
+    console.log(LOG_MESSAGE, "Class Features registered", registeredClassFeatures)
 
     Handlebars.registerHelper("math", mathHelper)
 
@@ -178,12 +186,21 @@ Hooks.once("ready", async function () {
 
 Hooks.once("setup", function () {
     if (game.users.activeGM?.isSelf) {
-        const systemFeatures = CONFIG.FU.classFeatures;
-        const moduleFeatures = registeredFeatures;
+        const systemClassFeatures = CONFIG.FU.classFeatures;
+        const moduleClassFeatures = registeredClassFeatures;
 
-        const migrations = [EsperMigration, MutantMigration, PilotMigration, FloralistMigration, GourmetMigration, InvokerMigration]
-            .map(migration => new migration(systemFeatures, moduleFeatures))
+        const classFeatureMigrations = [EsperMigration, MutantMigration, PilotMigration, FloralistMigration, GourmetMigration, InvokerMigration]
+            .map(migration => new migration(systemClassFeatures, moduleClassFeatures))
             .filter(migration => migration.canRun());
+
+        const systemOptionalFeatures = CONFIG.FU.optionalFeatures;
+        const moduleOptionalFeatures = registeredOptionalFeatures;
+
+        const optionalFeatureMigrations = [CampingActivityMigration]
+            .map(migration => new migration(systemOptionalFeatures, moduleOptionalFeatures))
+            .filter(migration => migration.canRun());
+
+        const migrations = [...classFeatureMigrations, ...optionalFeatureMigrations]
 
         if (migrations.length) {
             new MigrationApplication(migrations);
