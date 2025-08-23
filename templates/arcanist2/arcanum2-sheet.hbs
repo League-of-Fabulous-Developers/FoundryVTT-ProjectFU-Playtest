@@ -10,15 +10,21 @@
         <div class="grid grid-3col">
             <div>
                 <label class="resource-label-m">{{localize 'FU-PT.arcanum2.merge'}}</label>
-                {{editor enrichedHtml.merge target="system.data.merge" engine="prosemirror" button=true}}
+                <prose-mirror name="system.data.merge" value="{{system.data.merge}}" toggled>
+                    {{{enrichedHtml.merge}}}
+                </prose-mirror>
             </div>
             <div>
                 <label class="resource-label-m">{{localize 'FU-PT.arcanum2.pulse'}}</label>
-                {{editor enrichedHtml.pulse target="system.data.pulse" engine="prosemirror" button=true}}
+                <prose-mirror name="system.data.pulse" value="{{system.data.pulse}}" toggled>
+                    {{{enrichedHtml.pulse}}}
+                </prose-mirror>
             </div>
             <div>
                 <label class="resource-label-m">{{localize 'FU-PT.arcanum2.dismiss'}}</label>
-                {{editor enrichedHtml.dismiss target="system.data.dismiss" engine="prosemirror" button=true}}
+                <prose-mirror name="system.data.dismiss" value="{{system.data.dismiss}}" toggled>
+                    {{{enrichedHtml.dismiss}}}
+                </prose-mirror>
             </div>
         </div>
     </fieldset>
