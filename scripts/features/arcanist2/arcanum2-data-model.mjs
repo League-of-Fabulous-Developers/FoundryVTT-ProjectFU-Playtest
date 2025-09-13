@@ -75,4 +75,18 @@ export class Arcanum2DataModel extends projectfu.RollableClassFeatureDataModel {
 	transferEffects() {
 		return this.item?.isEquipped ?? false;
 	}
+
+    /**
+     * Action definition, invoked by sheets when 'data-action' equals the method name and no action defined on the sheet matches that name.
+     * @param {PointerEvent} event
+     * @param {HTMLElement} target
+     */
+    toggleActiveArcanum(event, target) {
+        const currentArcanumId = this.actor.system.equipped.arcanum;
+        // Toggle arcanum slot
+        const newArcanumId = currentArcanumId === this.item.id ? null : this.item.id;
+        this.actor.update({
+            'system.equipped.arcanum': newArcanumId,
+        });
+    }
 }
